@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { Videogame } = require("../db");
+const { Videogame, Genre } = require("../db");
 const { API_KEY } = process.env;
 
 // cantidad de paginas de api que quiero cargar
@@ -37,31 +37,52 @@ module.exports = {
 
       return { success: videogames };
     }
+
+    // si es invocado sin parametros, devuelve una cantidad determinada de juegos + los juegos en mi DB
+
+    let gamesDB = await Videogame.findAll({
+      include: {
+        model: Genre,
+        attributes: ["name"],
+        through: { attributes: [] },
+      },
+    });
+
+    gamesDB.map((game) => {
+      videogames.push({
+        id: game.id,
+        name: game.name,
+        rating: Number(game.rating),
+        image: "",
+        genres: game.genres,
+      });
+    });
+
     for (let i = 1; i <= qtyOfGames; i++) {
       let { data } = await axios.get(`https://api.rawg.io/api/games`, {
         params: { key: API_KEY, page: i },
       });
 
       data.results.map((game) => {
-        let platforms = game.parent_platforms
-          .map((parent) => parent.platform.id)
-          .join(", ");
-
-        let genres = game.genres.map((genre) => genre.id).join(", ");
+        let genres = game.genres.map((genre) => {
+          return { name: genre.name };
+        });
 
         videogames.push({
           id: game.id,
           name: game.name,
-          genres: genres,
+          rating: game.rating,
           image: game.background_image,
+          genres: genres,
         });
       });
     }
+
     return { success: videogames };
   },
 
   async postVideogame(body) {
-    const { name, description, released, rating, platforms } = body;
+    const { name, description, released, rating, platforms, genres } = body;
 
     if (!name || typeof name !== "string")
       return { error: "Error: Not a valid Name" };
@@ -82,6 +103,8 @@ module.exports = {
       where: newVideogame,
     });
 
+    await videogame.addGenres(genres);
+
     if (created) return { success: "Game created succesfully!" };
     return { success: "Game already exist!" };
   },
@@ -93,11 +116,10 @@ module.exports = {
       params: { key: API_KEY },
     });
 
-    let platforms = data.parent_platforms
-      .map((parent) => parent.platform.id)
-      .join(", ");
-
-    let genres = data.genres.map((genre) => genre.id).join(", ");
+    let platforms = data.parent_platforms.map((parent) => parent.platform.name);
+    let genres = data.genres.map((genre) => {
+      return { name: genre.name };
+    });
 
     let foundGame = {
       image: data.background_image,
