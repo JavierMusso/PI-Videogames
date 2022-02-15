@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,KAAK,CAAC;EACF,gBAAgB,EAAE,IAAI;CAED;;AAHzB,AAEI,KAFC,CAED,GAAG,CAAC;EACA,KAAK,EAAE,KAAK;CAAG",
+    "sources": [
+        "Game.module.sass"
+    ],
+    "names": [],
+    "file": "Game.module.css"
+}
