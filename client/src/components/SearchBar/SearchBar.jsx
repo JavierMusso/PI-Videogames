@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getGames, showSearch } from "../../redux/actions";
+import { getGames, setCurrentPage, showSearch } from "../../redux/actions";
 
 function SearchBar() {
   const dispatch = useDispatch();
@@ -12,6 +12,9 @@ function SearchBar() {
     if (input) {
       dispatch(showSearch(true));
       dispatch(getGames(input));
+    } else {
+      dispatch(setCurrentPage(0));
+      dispatch(showSearch(false));
     }
     setInput("");
   };

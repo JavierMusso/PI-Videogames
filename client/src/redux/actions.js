@@ -6,6 +6,8 @@ export const GET_GAMES = "GET_GAMES";
 export const GET_GAMES_BY_NAME = "GET_GAMES_BY_NAME";
 export const GET_GENRES = "GET_GENRES";
 export const SHOW_SEARCH = "SHOW_SEARCH";
+export const FILTER_SOURCE = "FILTER_SOURCE";
+export const SORT_BY = "SORT_BY";
 
 // armo las paginas, lo llamo cada vez que cambio la cantidad de juegos
 export const buildPages = () => {
@@ -48,4 +50,12 @@ export const getGenres = () => async (dispatch) => {
   } catch (err) {
     console.log(err);
   }
+};
+
+export const filterSource = (source) => {
+  return { type: FILTER_SOURCE, payload: source };
+};
+
+export const sortBy = (sort) => {
+  return { type: SORT_BY, payload: sort };
 };

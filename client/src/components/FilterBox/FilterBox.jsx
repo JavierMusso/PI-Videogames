@@ -1,13 +1,29 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { buildPages, filterSource, sortBy } from "../../redux/actions";
 
 function FilterBox() {
+  const dispatch = useDispatch();
   const { genres } = useSelector((state) => state);
+
+  const handlerSelect = (source) => {
+    dispatch(filterSource(source));
+    dispatch(buildPages());
+  };
+
+  const handlerSortBy = (sort) => {
+    dispatch(sortBy(sort));
+    dispatch(buildPages());
+  };
 
   return (
     <div>
       <label htmlFor="source">Show games:</label>
-      <select name="source" id="source">
+      <select
+        name="source"
+        id="source"
+        onInput={(e) => handlerSelect(e.target.value)}
+      >
         <option value="all">All</option>
         <option value="created">Created</option>
         <option value="rawg">RAWG</option>
@@ -15,13 +31,14 @@ function FilterBox() {
       <div>
         <label htmlFor="">Sort by:</label>
         <div>
-          <label>A-Z</label> <button>up</button>
-          <button>down</button>
+          <label>A-Z</label>
+          <button onClick={() => handlerSortBy("AZ")}>up</button>
+          <button onClick={() => handlerSortBy("ZA")}>down</button>
         </div>
         <div>
           <label>STAR</label>
-          <button>up</button>
-          <button>down</button>
+          <button onClick={() => handlerSortBy("HighRated")}>up</button>
+          <button onClick={() => handlerSortBy("LowRated")}>down</button>
         </div>
       </div>
       <div>
