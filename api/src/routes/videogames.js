@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
   const { name } = req.query;
   const { success, error } = await getVideogames(name);
 
-  if (error) return res.status(400).json(error);
+  if (error) return res.json(error);
   return res.json(success);
 });
 

@@ -7,7 +7,7 @@ import GameDetail from "./components/GameDetail/GameDetail";
 import Home from "./components/Home/Home";
 import Landing from "./components/Landing/Landing";
 import NotFound from "./components/NotFound/NotFound";
-import { buildPages, getGames } from "./redux/actions";
+import { buildPages, getGames, getGenres } from "./redux/actions";
 
 function App() {
   const dispatch = useDispatch();
@@ -15,6 +15,7 @@ function App() {
   useEffect(
     () => {
       (async () => {
+        dispatch(getGenres());
         await dispatch(getGames());
         dispatch(buildPages());
       })();

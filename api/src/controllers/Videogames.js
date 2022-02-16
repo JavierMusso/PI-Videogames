@@ -1,40 +1,58 @@
 const axios = require("axios");
+const { Op } = require("sequelize");
 const { Videogame, Genre } = require("../db");
 const { API_KEY } = process.env;
 
-// cantidad de paginas de api que quiero cargar
-const qtyOfGames = 1;
+// cantidad de paginas de api que quiero cargar (1 === 20 games)
+const qtyOfGames = 5;
 
 module.exports = {
   async getVideogames(name) {
     // si tengo un name por query, busca y devuelve 15 resultados que contienen ese nombre
     let videogames = [];
     if (name) {
+      // deberia buscar primero en la BD.
+      // despues en la api, concatenar hasta tener 15 resultados.
+
+      let gamesDB = await Videogame.findAll({
+        limit: 15,
+        where: {
+          name: {
+            [Op.iLike]: `%${name}%`,
+          },
+        },
+        include: {
+          model: Genre,
+          attributes: ["name"],
+          through: { attributes: [] },
+        },
+      });
+
+      if (gamesDB.length === 15) return { success: gamesDB };
+
+      videogames.push(...gamesDB);
+
       let { data } = await axios.get(`https://api.rawg.io/api/games`, {
         params: { search: name, key: API_KEY },
       });
-      if (!data.count)
-        return { error: `Error: no videogames found for ${name}` };
 
-      data.results.slice(0, 15).map((game) => {
-        let platforms = game.parent_platforms
-          .map((parent) => parent.platform.id)
-          .join(", ");
-
-        let genres = game.genres.map((genre) => genre.id).join(", ");
-
+      let gamesNeeded = 15 - videogames.length;
+      data.results.slice(0, gamesNeeded).map((game) => {
+        let genres = game.genres.map((genre) => {
+          return { name: genre.name };
+        });
         videogames.push({
           id: game.id,
           name: game.name,
-          description: "",
-          released: game.released,
           rating: game.rating,
-          platforms: platforms,
-          genres: genres,
           image: game.background_image,
+          genres: genres,
         });
       });
 
+      if (!videogames.length) {
+        return { error: `Error: no videogames found for ${name}` };
+      }
       return { success: videogames };
     }
 
@@ -128,7 +146,7 @@ module.exports = {
       description: data.description_raw,
       released: data.released,
       rating: data.rating,
-      platforms: platforms,
+      platforms: platforms.join(", "),
     };
 
     return { success: foundGame };

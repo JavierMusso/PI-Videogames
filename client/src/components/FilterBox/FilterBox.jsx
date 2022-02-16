@@ -1,6 +1,9 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 function FilterBox() {
+  const { genres } = useSelector((state) => state);
+
   return (
     <div>
       <label htmlFor="source">Show games:</label>
@@ -24,8 +27,15 @@ function FilterBox() {
       <div>
         <label htmlFor="genres">Genres</label>
         <div name="genres">
-          <label htmlFor="action">Action</label>{" "}
-          <input type="radio" name="action" id="" />
+          {genres.length &&
+            genres.map((genre) => {
+              return (
+                <div key={genre.id}>
+                  <label htmlFor={genre.name}>{genre.name}</label>
+                  <input type="radio" name={genre.name} id={genre.name} />
+                </div>
+              );
+            })}
         </div>
       </div>
     </div>
