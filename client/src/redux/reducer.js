@@ -35,6 +35,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
         ...state,
         currentPage: payload,
         searchResults: [],
+        showSearchResults: false,
       };
 
     case SHOW_SEARCH:
