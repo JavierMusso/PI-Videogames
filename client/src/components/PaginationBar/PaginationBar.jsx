@@ -159,7 +159,7 @@ function PaginationBar() {
     );
   }
 
-  const changecurrentPage = (str) => {
+  const changeCurrentPage = (str) => {
     switch (str) {
       case "right":
         currentPage < pages.length - 1 &&
@@ -175,9 +175,9 @@ function PaginationBar() {
 
   return (
     <div className={styles.PaginationBar}>
-      <button onClick={() => changecurrentPage("left")}>izq</button>
+      <button onClick={() => changeCurrentPage("left")}>izq</button>
       {pagination}
-      <button onClick={() => changecurrentPage("right")}>der</button>
+      <button onClick={() => changeCurrentPage("right")}>der</button>
     </div>
   );
 }
