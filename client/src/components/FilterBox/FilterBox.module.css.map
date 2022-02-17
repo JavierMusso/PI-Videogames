@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAC;EACP,gBAAgB,EAAE,IAAI;EACtB,KAAK,EAAE,KAAK;CAIa;;AAN7B,AAIQ,UAJE,CAGN,WAAW,CACP,aAAa,CAAC;EACV,gBAAgB,EAAE,KAAK;CAAG",
+    "sources": [
+        "FilterBox.module.sass"
+    ],
+    "names": [],
+    "file": "FilterBox.module.css"
+}

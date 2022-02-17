@@ -3,7 +3,7 @@ const { Op } = require("sequelize");
 const { Videogame, Genre } = require("../db");
 const { API_KEY } = process.env;
 
-// cantidad de paginas de api que quiero cargar (1 === 20 games)
+// cantidad de paginas a llenar (100 / 20 = 5)
 const qtyOfGames = 5;
 
 module.exports = {

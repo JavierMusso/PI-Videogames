@@ -1,10 +1,17 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { buildPages, filterSource, sortBy } from "../../redux/actions";
+import {
+  buildPages,
+  filterGenre,
+  filterSource,
+  setGenreInputs,
+  sortBy,
+} from "../../redux/actions";
+import styles from "./FilterBox.module.css";
 
 function FilterBox() {
   const dispatch = useDispatch();
-  const { genres } = useSelector((state) => state);
+  const { genres, genreInputs } = useSelector((state) => state);
 
   const handlerSelect = (source) => {
     dispatch(filterSource(source));
@@ -16,8 +23,17 @@ function FilterBox() {
     dispatch(buildPages());
   };
 
+  const handlerGenres = (genre) => {
+    dispatch(
+      setGenreInputs({
+        [genre]: !genreInputs[genre],
+      })
+    );
+    dispatch(filterGenre());
+  };
+
   return (
-    <div>
+    <div className={styles.FilterBox}>
       <label htmlFor="source">Show games:</label>
       <select
         name="source"
@@ -43,13 +59,22 @@ function FilterBox() {
       </div>
       <div>
         <label htmlFor="genres">Genres</label>
-        <div name="genres">
+        <div name="genres" className={styles.div_genres}>
           {genres.length &&
             genres.map((genre) => {
               return (
                 <div key={genre.id}>
-                  <label htmlFor={genre.name}>{genre.name}</label>
-                  <input type="radio" name={genre.name} id={genre.name} />
+                  <button
+                    key={genre.id}
+                    onClick={() => handlerGenres(genre.name)}
+                    className={
+                      genreInputs[genre.name]
+                        ? styles.btn_toggleON
+                        : styles.btn_toggleOFF
+                    }
+                  >
+                    {genre.name}
+                  </button>
                 </div>
               );
             })}

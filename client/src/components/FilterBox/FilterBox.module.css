@@ -1,0 +1,9 @@
+.FilterBox {
+  background-color: peru;
+  width: 300px;
+}
+
+.FilterBox .div_genres .btn_toggleON {
+  background-color: green;
+}
+/*# sourceMappingURL=FilterBox.module.css.map */

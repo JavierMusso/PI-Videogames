@@ -8,6 +8,8 @@ export const GET_GENRES = "GET_GENRES";
 export const SHOW_SEARCH = "SHOW_SEARCH";
 export const FILTER_SOURCE = "FILTER_SOURCE";
 export const SORT_BY = "SORT_BY";
+export const FILTER_GENRE = "FILTER_GENRE";
+export const SET_GENRE_INPUTS = "SET_GENRE_INPUTS";
 
 // armo las paginas, lo llamo cada vez que cambio la cantidad de juegos
 export const buildPages = () => {
@@ -58,4 +60,12 @@ export const filterSource = (source) => {
 
 export const sortBy = (sort) => {
   return { type: SORT_BY, payload: sort };
+};
+
+export const setGenreInputs = (genreInputs) => {
+  return { type: SET_GENRE_INPUTS, payload: genreInputs };
+};
+
+export const filterGenre = () => {
+  return { type: FILTER_GENRE };
 };

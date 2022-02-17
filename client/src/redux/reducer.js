@@ -1,10 +1,12 @@
 import {
   BUILD_PAGES,
+  FILTER_GENRE,
   FILTER_SOURCE,
   GET_GAMES,
   GET_GAMES_BY_NAME,
   GET_GENRES,
   SET_CURRENT,
+  SET_GENRE_INPUTS,
   SHOW_SEARCH,
   SORT_BY,
 } from "./actions";
@@ -17,6 +19,8 @@ const initialState = {
   searchResults: [],
   showSearchResults: false,
   filteredGames: [],
+  genreInputs: {},
+  filterByGenreGames: [],
 };
 
 let gamesPerPage = 15;
@@ -123,6 +127,27 @@ const rootReducer = (state = initialState, { type, payload }) => {
         default:
           return state;
       }
+
+    case FILTER_GENRE:
+      console.log(state.genreInputs);
+      //
+      //    ORDEN:
+      //    filtrar by source --> modifica games / devuelve filteredGames
+      //    filtrar by genres --> copia filteredGames / devuelve filteredGames2?
+      //    sort by AZ-rating --> modifica filteredGames2
+      //
+      //    DEBERIA HACER QUE LOS GENEROS QUEDEN COMO UN STRING CONCATENADO...
+      //    para luego poder hacer .include (any genre... )
+      //    1 .include por cada filtro que tengo en mi arreglo de filtros
+      //
+      //
+      // iterar objeto. si ninguna key es TRUE, mostrar todos
+      // guardar en variable todos las key true, para luego filtrar resultados by genre.
+      // 1
+      return state;
+
+    case SET_GENRE_INPUTS:
+      return { ...state, genreInputs: { ...state.genreInputs, ...payload } };
 
     default:
       return state;
