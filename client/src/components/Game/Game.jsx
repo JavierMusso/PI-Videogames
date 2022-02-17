@@ -8,7 +8,7 @@ function Game({ props }) {
       <p>Nombre: {props.name}</p>
       <p>
         Generos:
-        {props.genres.map((genre) => genre.name).join(", ")}
+        {props.genres.join(", ")}
       </p>
       <p>Rating: {props.rating}</p>
       <img src={props.image || defaultGame} alt="" />

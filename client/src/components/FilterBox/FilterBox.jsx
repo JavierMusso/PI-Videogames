@@ -15,6 +15,7 @@ function FilterBox() {
 
   const handlerSelect = (source) => {
     dispatch(filterSource(source));
+    dispatch(setGenreInputs());
     dispatch(buildPages());
   };
 
@@ -30,6 +31,7 @@ function FilterBox() {
       })
     );
     dispatch(filterGenre());
+    dispatch(buildPages());
   };
 
   return (

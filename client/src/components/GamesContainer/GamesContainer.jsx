@@ -21,7 +21,11 @@ function GamesContainer() {
           <p>Cargando juegos...</p>
         )
       ) : pages.length ? (
-        pages[currentPage].map((game) => <Game key={game.id} props={game} />)
+        typeof pages === "string" ? (
+          <p>{pages}</p>
+        ) : (
+          pages[currentPage].map((game) => <Game key={game.id} props={game} />)
+        )
       ) : (
         <p>Cargando juegos...</p>
       )}

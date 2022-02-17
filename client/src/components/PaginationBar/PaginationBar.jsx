@@ -173,6 +173,8 @@ function PaginationBar() {
     }
   };
 
+  if (typeof pages === "string" || pages.length < 2) return <></>;
+
   return (
     <div className={styles.PaginationBar}>
       <button onClick={() => changeCurrentPage("left")}>izq</button>

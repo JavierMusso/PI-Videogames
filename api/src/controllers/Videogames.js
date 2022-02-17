@@ -38,9 +38,7 @@ module.exports = {
 
       let gamesNeeded = 15 - videogames.length;
       data.results.slice(0, gamesNeeded).map((game) => {
-        let genres = game.genres.map((genre) => {
-          return { name: genre.name };
-        });
+        let genres = game.genres.map((genre) => genre.name);
         videogames.push({
           id: game.id,
           name: game.name,
@@ -67,12 +65,13 @@ module.exports = {
     });
 
     gamesDB.map((game) => {
+      let genres = game.genres.map((genre) => genre.name);
       videogames.push({
         id: game.id,
         name: game.name,
         rating: Number(game.rating),
         image: "",
-        genres: game.genres,
+        genres: genres,
       });
     });
 
@@ -82,9 +81,7 @@ module.exports = {
       });
 
       data.results.map((game) => {
-        let genres = game.genres.map((genre) => {
-          return { name: genre.name };
-        });
+        let genres = game.genres.map((genre) => genre.name);
 
         videogames.push({
           id: game.id,
@@ -130,14 +127,14 @@ module.exports = {
   async getGameByID(id) {
     if (!id || typeof id !== "number") return { error: "Error: Invalid ID" };
 
+    // should check what ID is, and look either in rawg or my api.
+
     let { data } = await axios.get(`https://api.rawg.io/api/games/${id}`, {
       params: { key: API_KEY },
     });
 
     let platforms = data.parent_platforms.map((parent) => parent.platform.name);
-    let genres = data.genres.map((genre) => {
-      return { name: genre.name };
-    });
+    let genres = data.genres.map((genre) => genre.name);
 
     let foundGame = {
       image: data.background_image,
