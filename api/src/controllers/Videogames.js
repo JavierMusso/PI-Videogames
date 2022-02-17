@@ -4,7 +4,7 @@ const { Videogame, Genre } = require("../db");
 const { API_KEY } = process.env;
 
 // cantidad de paginas a llenar (100 / 20 = 5)
-const qtyOfGames = 5;
+const qtyOfGames = 1;
 
 module.exports = {
   async getVideogames(name) {
@@ -125,25 +125,53 @@ module.exports = {
   },
 
   async getGameByID(id) {
-    if (!id || typeof id !== "number") return { error: "Error: Invalid ID" };
+    if (!id) return { error: "Error: Invalid ID" };
 
     // should check what ID is, and look either in rawg or my api.
 
-    let { data } = await axios.get(`https://api.rawg.io/api/games/${id}`, {
-      params: { key: API_KEY },
-    });
+    if (id.length < 36) {
+      let { data } = await axios.get(`https://api.rawg.io/api/games/${id}`, {
+        params: { key: API_KEY },
+      });
 
-    let platforms = data.parent_platforms.map((parent) => parent.platform.name);
-    let genres = data.genres.map((genre) => genre.name);
+      let platforms = data.parent_platforms.map(
+        (parent) => parent.platform.name
+      );
+      let genres = data.genres.map((genre) => genre.name);
+
+      let foundGame = {
+        image: data.background_image,
+        name: data.name,
+        genre: genres,
+        description: data.description_raw,
+        released: data.released,
+        rating: data.rating,
+        platforms: platforms.join(", "),
+      };
+
+      return { success: foundGame };
+    }
+
+    let gameDB = await Videogame.findOne({
+      where: {
+        id: id,
+      },
+      include: {
+        model: Genre,
+        attributes: ["name"],
+        through: { attributes: [] },
+      },
+    });
+    let genres = gameDB.genres.map((genre) => genre.name);
 
     let foundGame = {
-      image: data.background_image,
-      name: data.name,
+      image: "url",
+      name: gameDB.name,
       genre: genres,
-      description: data.description_raw,
-      released: data.released,
-      rating: data.rating,
-      platforms: platforms.join(", "),
+      description: gameDB.description,
+      released: gameDB.released,
+      rating: gameDB.rating,
+      platforms: gameDB.platforms,
     };
 
     return { success: foundGame };

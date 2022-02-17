@@ -28,7 +28,7 @@ router.post("/", async (req, res) => {
 // get a /videogames/:id debe devolver los detalles de un juego, ID pasado por params
 router.get("/:id", async (req, res) => {
   const { id } = req.params;
-  const { success, error } = await getGameByID(Number(id));
+  const { success, error } = await getGameByID(id);
 
   if (error) return res.status(400).json(error);
   return res.json(success);
