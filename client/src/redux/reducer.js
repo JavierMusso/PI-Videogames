@@ -195,7 +195,8 @@ const rootReducer = (state = initialState, { type, payload }) => {
           };
         return { ...state, filterByGenreGames: filterByGenreGames };
       } else {
-        console.log("should not filter");
+        // case para cuando no hay filtros seleccionados.
+        // devuelve todos los juegos
         return { ...state, filterByGenreGames: state.filteredGames };
       }
 

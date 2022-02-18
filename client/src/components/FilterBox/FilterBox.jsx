@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   buildPages,
@@ -12,19 +13,23 @@ import styles from "./FilterBox.module.css";
 function FilterBox() {
   const dispatch = useDispatch();
   const { genres, genreInputs } = useSelector((state) => state);
+  const [sorted, setSorted] = useState();
 
   const handlerSelect = (source) => {
+    setSorted(false);
     dispatch(filterSource(source));
     dispatch(setGenreInputs());
     dispatch(buildPages());
   };
 
   const handlerSortBy = (sort) => {
+    setSorted(sort);
     dispatch(sortBy(sort));
     dispatch(buildPages());
   };
 
   const handlerGenres = (genre) => {
+    setSorted(false);
     dispatch(
       setGenreInputs({
         [genre]: !genreInputs[genre],
@@ -50,13 +55,43 @@ function FilterBox() {
         <label htmlFor="">Sort by:</label>
         <div>
           <label>A-Z</label>
-          <button onClick={() => handlerSortBy("AZ")}>up</button>
-          <button onClick={() => handlerSortBy("ZA")}>down</button>
+          <button
+            className={
+              sorted === "AZ" ? styles.btn_toggleON : styles.btn_toggleOFF
+            }
+            onClick={() => handlerSortBy("AZ")}
+          >
+            up
+          </button>
+          <button
+            className={
+              sorted === "ZA" ? styles.btn_toggleON : styles.btn_toggleOFF
+            }
+            onClick={() => handlerSortBy("ZA")}
+          >
+            down
+          </button>
         </div>
         <div>
           <label>STAR</label>
-          <button onClick={() => handlerSortBy("HighRated")}>up</button>
-          <button onClick={() => handlerSortBy("LowRated")}>down</button>
+          <button
+            className={
+              sorted === "HighRated"
+                ? styles.btn_toggleON
+                : styles.btn_toggleOFF
+            }
+            onClick={() => handlerSortBy("HighRated")}
+          >
+            up
+          </button>
+          <button
+            className={
+              sorted === "LowRated" ? styles.btn_toggleON : styles.btn_toggleOFF
+            }
+            onClick={() => handlerSortBy("LowRated")}
+          >
+            down
+          </button>
         </div>
       </div>
       <div>

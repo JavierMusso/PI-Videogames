@@ -1,0 +1,3 @@
+dejar listos los botones de sorting
+
+input de cuantos juegos por pagina
