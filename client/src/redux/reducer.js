@@ -97,6 +97,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
     case SORT_BY:
       switch (payload) {
         case "AZ":
+          // https://stackoverflow.com/questions/6712034/sort-array-by-firstname-alphabetically-in-javascript
           let sortedAZ;
           if (state.showSearchResults) {
             sortedAZ = state.searchResults;
