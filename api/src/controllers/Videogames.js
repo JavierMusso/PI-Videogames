@@ -97,8 +97,11 @@ module.exports = {
   },
 
   async postVideogame(body) {
-    const { name, description, released, rating, platforms, genres, image } =
+    let { name, description, released, rating, platforms, genres, image } =
       body;
+
+    console.log("llego al back");
+    console.log(body);
 
     if (!name || typeof name !== "string")
       return { error: "Error: Not a valid Name" };
@@ -107,6 +110,7 @@ module.exports = {
     if (!platforms || typeof platforms !== "string")
       return { error: "Error: Not a valid platform" };
 
+    console.log("llego aca?");
     console.log(image);
     let newVideogame = {
       name,
@@ -114,13 +118,15 @@ module.exports = {
       released,
       rating,
       platforms,
-      image,
+      image: image || "",
     };
 
     const [videogame, created] = await Videogame.findOrCreate({
       where: newVideogame,
     });
 
+    // parse genres to number
+    genres = genres.map((genre) => Number(genre));
     await videogame.addGenres(genres);
 
     if (created) return { success: "Game created succesfully!" };

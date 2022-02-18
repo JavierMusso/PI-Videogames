@@ -6,6 +6,7 @@ export const GET_GAMES = "GET_GAMES";
 export const GET_GAMES_BY_NAME = "GET_GAMES_BY_NAME";
 export const GET_GAME_BY_ID = "GET_GAME_BY_ID";
 export const GET_GENRES = "GET_GENRES";
+export const ADD_GAME = "ADD_GAME";
 export const SHOW_SEARCH = "SHOW_SEARCH";
 export const FILTER_SOURCE = "FILTER_SOURCE";
 export const SORT_BY = "SORT_BY";
@@ -47,13 +48,24 @@ export const getGames = (game) => async (dispatch) => {
 };
 
 export const getGameID = (ID) => async (dispatch) => {
-  console.log("llego a crear la action");
   if (!ID) return dispatch({ type: GET_GAME_BY_ID });
   try {
     let { data } = await axios.get(
       `http://localhost:3001/api/videogames/${ID}`
     );
     return dispatch({ type: GET_GAME_BY_ID, payload: data });
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const addGame = (newGame) => async (dispatch) => {
+  try {
+    let { data } = await axios.post(
+      `http://localhost:3001/api/videogames`,
+      newGame
+    );
+    console.log(data);
   } catch (err) {
     console.log(err);
   }

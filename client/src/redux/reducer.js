@@ -65,7 +65,6 @@ const rootReducer = (state = initialState, { type, payload }) => {
       return { ...state, searchResults: payload };
 
     case GET_GAME_BY_ID:
-      console.log("llego al reducer");
       if (!payload) return { ...state, gameDetail: "" };
       return { ...state, gameDetail: payload };
 

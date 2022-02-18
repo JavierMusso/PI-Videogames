@@ -13,13 +13,20 @@ en game detail, poner SHOW MORE en el texto si es muy grande
 
 traer varias imagenes, y mostrarlas con un slide en cada card ?
 
+About page
+
+404 page
+
+game ---> rating color depende del rating 
 
 
 
 ////////// COSAS QUE FALTAN HACER
 
 
-ruta creacion ---> hacer formulario creacion (validacion) ---> crear desde front
+gameDetail ---> que pasa cuando la id es incorrecta
+
+creacion ---> dar feedback, y hacer validacion
 
 estilos
 
