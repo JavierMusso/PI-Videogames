@@ -12,17 +12,13 @@ import { buildPages, getGames, getGenres } from "./redux/actions";
 function App() {
   const dispatch = useDispatch();
 
-  useEffect(
-    () => {
-      (async () => {
-        dispatch(getGenres());
-        await dispatch(getGames());
-        dispatch(buildPages());
-      })();
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
-  );
+  useEffect(() => {
+    (async () => {
+      dispatch(getGenres());
+      await dispatch(getGames());
+      dispatch(buildPages());
+    })();
+  }, [dispatch]);
 
   return (
     <div className="App">

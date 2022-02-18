@@ -1,3 +1,30 @@
-dejar listos los botones de sorting
+////////// AGREGADOS
+
 
 input de cuantos juegos por pagina
+
+modo oscuro
+
+subir imagenes
+
+loaders
+
+en game detail, poner SHOW MORE en el texto si es muy grande
+
+traer varias imagenes, y mostrarlas con un slide en cada card ?
+
+
+
+
+////////// COSAS QUE FALTAN HACER
+
+
+ruta creacion ---> hacer formulario creacion (validacion) ---> crear desde front
+
+estilos
+
+testing:
+    *front
+    *back
+    *db
+

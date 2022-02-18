@@ -4,6 +4,7 @@ import {
   FILTER_SOURCE,
   GET_GAMES,
   GET_GAMES_BY_NAME,
+  GET_GAME_BY_ID,
   GET_GENRES,
   SET_CURRENT,
   SET_GENRE_INPUTS,
@@ -62,6 +63,11 @@ const rootReducer = (state = initialState, { type, payload }) => {
 
     case GET_GAMES_BY_NAME:
       return { ...state, searchResults: payload };
+
+    case GET_GAME_BY_ID:
+      console.log("llego al reducer");
+      if (!payload) return { ...state, gameDetail: "" };
+      return { ...state, gameDetail: payload };
 
     case GET_GENRES:
       return { ...state, genres: payload };

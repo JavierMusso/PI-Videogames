@@ -1,11 +1,14 @@
 import React from "react";
 import styles from "./Game.module.css";
 import defaultGame from "../../assets/default-game.jpg";
+import { Link } from "react-router-dom";
 
 function Game({ props }) {
   return (
     <div className={styles.Game}>
-      <p>Nombre: {props.name}</p>
+      <Link to={`/game/${props.id}`}>
+        <p>Nombre: {props.name}</p>
+      </Link>
       <p>
         Generos:
         {props.genres.join(", ")}
