@@ -1,0 +1,54 @@
+$title: #9f77fd
+$text: #c6b9d8
+$text-bg: #4b4b4be7
+    
+.Landing
+    width: 100vw
+    height: 100vh
+    background-image: url('../../assets/Landing.jpg')
+    background-size: 100% 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    .border
+        border: 5px solid $text
+        border-radius: 0 50px
+        transform: translateY(-200%)
+        animation: comeIn 0.8s ease-in-out forwards
+        opacity: 0
+        div
+            margin: 5px
+            background-color: $text-bg
+            padding: 40px
+            border-radius: 0 50px
+            position: relative
+            h1
+                color: $title
+                display: inline
+                font-size: 50px
+                span
+                    color: $text
+                    font-size: 30px
+            a
+                position: absolute
+                bottom: 25px
+                right: 200px
+                font-size: 50px
+                color: $text
+                font-weight: 700
+                transition: all 0.2s ease-in-out
+                text-decoration: none
+                background-color: $title
+                color: $text-bg
+                padding-inline: 5px 
+            a:hover
+                background-color: transparent
+                color: $title
+
+
+@keyframes comeIn
+  to 
+    transform: translateY(0%)
+    opacity: 1
+
+  

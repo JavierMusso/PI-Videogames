@@ -1,0 +1,81 @@
+.Landing {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../assets/Landing.jpg");
+  background-size: 100% 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Landing .border {
+  border: 5px solid #c6b9d8;
+  border-radius: 0 50px;
+  -webkit-transform: translateY(-200%);
+          transform: translateY(-200%);
+  -webkit-animation: comeIn 0.8s ease-in-out forwards;
+          animation: comeIn 0.8s ease-in-out forwards;
+  opacity: 0;
+}
+
+.Landing .border div {
+  margin: 5px;
+  background-color: #4b4b4be7;
+  padding: 40px;
+  border-radius: 0 50px;
+  position: relative;
+}
+
+.Landing .border div h1 {
+  color: #9f77fd;
+  display: inline;
+  font-size: 50px;
+}
+
+.Landing .border div h1 span {
+  color: #c6b9d8;
+  font-size: 30px;
+}
+
+.Landing .border div a {
+  position: absolute;
+  bottom: 25px;
+  right: 200px;
+  font-size: 50px;
+  color: #c6b9d8;
+  font-weight: 700;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  background-color: #9f77fd;
+  color: #4b4b4be7;
+  padding-inline: 5px;
+}
+
+.Landing .border div a:hover {
+  background-color: transparent;
+  color: #9f77fd;
+}
+
+@-webkit-keyframes comeIn {
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes comeIn {
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=Landing.module.css.map */

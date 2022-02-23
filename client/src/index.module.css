@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Roboto:300,700");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+* {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Press Start 2P", serif;
+}
+/*# sourceMappingURL=index.module.css.map */

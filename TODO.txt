@@ -15,7 +15,6 @@ traer varias imagenes, y mostrarlas con un slide en cada card ?
 
 About page
 
-404 page
 
 game ---> rating color depende del rating 
 
