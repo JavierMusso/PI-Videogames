@@ -2,9 +2,39 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-block: 15px;
+}
+
+.PaginationBar button {
+  border: none;
+  background-color: #1d3d94;
+  color: #e8e5ec;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px;
+  padding-inline: 10px;
+}
+
+.PaginationBar button:hover {
+  background-color: #4260b3;
+}
+
+.PaginationBar .btn_left {
+  border-radius: 50px 0px 0px 50px;
+}
+
+.PaginationBar .btn_right {
+  border-radius: 0px 50px 50px 0px;
 }
 
 .PaginationBar .currentPage {
-  background-color: peru;
+  background-color: #e8e5ec;
+  color: #1d3d94;
+  -webkit-transform: scale(120%);
+          transform: scale(120%);
+}
+
+.PaginationBar .currentPage:hover {
+  background-color: #e8e5ec;
 }
 /*# sourceMappingURL=PaginationBar.module.css.map */

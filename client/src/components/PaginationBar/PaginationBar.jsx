@@ -177,9 +177,27 @@ function PaginationBar() {
 
   return (
     <div className={styles.PaginationBar}>
-      <button onClick={() => changeCurrentPage("left")}>izq</button>
+      {currentPage > 0 ? (
+        <button
+          className={styles.btn_left}
+          onClick={() => changeCurrentPage("left")}
+        >
+          {"<<"}
+        </button>
+      ) : (
+        ""
+      )}
       {pagination}
-      <button onClick={() => changeCurrentPage("right")}>der</button>
+      {currentPage !== pages.length - 1 ? (
+        <button
+          className={styles.btn_right}
+          onClick={() => changeCurrentPage("right")}
+        >
+          {">>"}
+        </button>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

@@ -4,7 +4,7 @@ const { Videogame, Genre } = require("../db");
 const { API_KEY } = process.env;
 
 // cantidad de paginas a llenar (100 / 20 = 5)
-const qtyOfGames = 1;
+const qtyOfGames = 5;
 
 module.exports = {
   async getVideogames(name) {
