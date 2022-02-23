@@ -1,1 +1,10 @@
-/* No CSS *//*# sourceMappingURL=PaginationBar.module.css.map */
+.PaginationBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.PaginationBar .currentPage {
+  background-color: peru;
+}
+/*# sourceMappingURL=PaginationBar.module.css.map */

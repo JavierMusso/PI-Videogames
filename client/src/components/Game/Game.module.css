@@ -1,8 +1,65 @@
 .Game {
-  background-color: peru;
+  background-color: #1d3d94;
+  width: 266px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  padding-block: 10px;
+  position: relative;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0px -15px 10px -15px #00000078;
+          box-shadow: inset 0px -15px 10px -15px #00000078;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.Game .title {
+  padding-inline: 15px;
+}
+
+.Game small {
+  color: #e8e5ec;
+  padding-inline: 15px;
+}
+
+.Game a {
+  color: #e8e5ec;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .Game img {
-  width: 250px;
+  margin-block: 10px;
+}
+
+.Game .data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Game .data span {
+  color: #1d3d94;
+  font-weight: bold;
+  margin-inline: 10px;
+  padding-inline: 3px;
+  border-radius: 3px;
+}
+
+.Game:hover {
+  -webkit-transform: scale(115%);
+          transform: scale(115%);
+  z-index: 1;
+  background-color: #152a62;
+}
+
+.Game:hover a {
+  text-decoration: underline;
 }
 /*# sourceMappingURL=Game.module.css.map */

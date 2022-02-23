@@ -1,4 +1,38 @@
+$text: #e8e5ec
+    
 .Game
-    background-color: peru
+    background-color: #1d3d94
+    width: 266px
+    height: min-content
+    padding-block: 10px
+    position: relative
+    border-radius: 10px
+    box-shadow: inset 0px -15px 10px -15px #00000078
+    transition: all 0.4s ease
+    .title
+        padding-inline: 15px 
+    small
+        color: $text
+        padding-inline: 15px 
+    a
+        color: $text
+        text-decoration: none
+        font-weight: bold
     img
-        width: 250px
+        margin-block: 10px 
+    .data
+        display: flex
+        justify-content: space-between
+        align-items: center
+        span
+            color: #1d3d94
+            font-weight: bold
+            margin-inline: 10px 
+            padding-inline: 3px
+            border-radius: 3px
+.Game:hover
+    transform: scale(115%)
+    z-index: 1
+    background-color: #152a62
+    a
+        text-decoration: underline

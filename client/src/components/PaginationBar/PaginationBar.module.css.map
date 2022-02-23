@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,AAAA,cAAc,CAAC;EACX,OAAO,EAAE,IAAI;CAEkB;;AAHnC,AAEI,cAFU,CAEV,YAAY,CAAC;EACT,gBAAgB,EAAE,IAAI;CAAG",
     "sources": [
         "PaginationBar.module.sass"
     ],

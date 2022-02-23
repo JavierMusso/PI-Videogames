@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,UAAU,CAAC;EACP,gBAAgB,EAAE,IAAI;EACtB,KAAK,EAAE,KAAK;CAIO;;AANvB,AAII,UAJM,CAIN,aAAa,CAAC;EACV,gBAAgB,EAAE,KAAK;CAAG",
+    "mappings": "AAAA,AAAA,UAAU,CAAC;EACP,gBAAgB,EAAE,IAAI;EACtB,KAAK,EAAE,KAAK;CAGoB;;AALpC,AAII,UAJM,CAIN,aAAa,CAAC;EACV,gBAAgB,EAAE,KAAK;CAAG",
     "sources": [
         "FilterBox.module.sass"
     ],
