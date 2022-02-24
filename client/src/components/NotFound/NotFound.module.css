@@ -19,10 +19,10 @@
   background-image: url("../../assets/not-found.png");
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: "Press Start 2P", sans-serif;
 }
 
 .NotFound h1, .NotFound h2 {
-  font-family: "Press Start 2P", sans-serif;
   font-size: 60px;
   color: #e6e6fb;
   text-shadow: 0 0 100px #fff, 0 0 42px #2600ff, 0 0 82px #2600ff, 0 0 92px #2600ff, 0 0 102px #2600ff;
@@ -30,6 +30,7 @@
 }
 
 .NotFound a {
+  font-family: "Press Start 2P", sans-serif;
   color: #e6e6fb;
   font-size: 20px;
   -webkit-transition: all 0.3s ease;

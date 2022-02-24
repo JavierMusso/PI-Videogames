@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getGames, setCurrentPage, showSearch } from "../../redux/actions";
+import styles from "./SearchBar.module.css";
 
 function SearchBar() {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ function SearchBar() {
   };
 
   return (
-    <div>
+    <div className={styles.SearchBar}>
       <form action="#" onSubmit={handlerSubmit}>
         <input
           value={input}

@@ -30,7 +30,7 @@ router.get("/:id", async (req, res) => {
   const { id } = req.params;
   const { success, error } = await getGameByID(id);
 
-  if (error) return res.status(400).json(error);
+  if (error) return res.json(error);
   return res.json(success);
 });
 

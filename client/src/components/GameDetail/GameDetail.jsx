@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import { getGameID } from "../../redux/actions";
 
 function GameDetail() {
@@ -15,6 +15,8 @@ function GameDetail() {
   if (!game) {
     return <div>CARGANDO...</div>;
   }
+
+  if (typeof game === "string") return <Navigate to="/404" />;
 
   return (
     <div className="GameDetail">

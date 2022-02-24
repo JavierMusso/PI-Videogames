@@ -139,9 +139,13 @@ module.exports = {
     // should check what ID is, and look either in rawg or my api.
 
     if (id.length < 36) {
-      let { data } = await axios.get(`https://api.rawg.io/api/games/${id}`, {
-        params: { key: API_KEY },
-      });
+      try {
+        var { data } = await axios.get(`https://api.rawg.io/api/games/${id}`, {
+          params: { key: API_KEY },
+        });
+      } catch (error) {
+        return { error: "Error: Invalid ID" };
+      }
 
       let platforms = data.parent_platforms.map(
         (parent) => parent.platform.name

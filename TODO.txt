@@ -15,15 +15,17 @@ traer varias imagenes, y mostrarlas con un slide en cada card ?
 
 About page
 
+mostrar un random game on top of all, como si fuera un destacado.
 
-game ---> rating color depende del rating 
+juegos recomendados para esta semana ?
+
+
+buscados recientemente
+
 
 
 
 ////////// COSAS QUE FALTAN HACER
-
-
-gameDetail ---> que pasa cuando la id es incorrecta
 
 creacion ---> dar feedback, y hacer validacion
 

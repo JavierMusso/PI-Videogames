@@ -198,11 +198,19 @@ const rootReducer = (state = initialState, { type, payload }) => {
             ...state,
             filterByGenreGames: [],
           };
-        return { ...state, filterByGenreGames: filterByGenreGames };
+        return {
+          ...state,
+          filterByGenreGames: filterByGenreGames,
+          currentPage: 0,
+        };
       } else {
         // case para cuando no hay filtros seleccionados.
         // devuelve todos los juegos
-        return { ...state, filterByGenreGames: state.filteredGames };
+        return {
+          ...state,
+          filterByGenreGames: state.filteredGames,
+          currentPage: 0,
+        };
       }
 
     case SET_GENRE_INPUTS:
