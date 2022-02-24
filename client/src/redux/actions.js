@@ -66,6 +66,7 @@ export const addGame = (newGame) => async (dispatch) => {
       newGame
     );
     console.log(data);
+    return data;
   } catch (err) {
     console.log(err);
   }

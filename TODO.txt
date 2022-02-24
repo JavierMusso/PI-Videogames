@@ -29,6 +29,8 @@ buscados recientemente
 
 creacion ---> dar feedback, y hacer validacion
 
+loaders como la gente
+
 estilos
 
 testing:

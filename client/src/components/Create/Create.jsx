@@ -15,13 +15,21 @@ function Create() {
     genres: [],
     images: "",
   });
+  const [errors, setErrors] = useState({
+    name: false,
+    description: false,
+    platforms: false,
+  });
 
-  const handlerSubmit = (e) => {
+  const handlerSubmit = async (e) => {
     e.preventDefault();
 
     let newGame = input;
     console.log(newGame);
-    dispatch(addGame(newGame));
+    let created = await dispatch(addGame(newGame));
+
+    // this should be a modal pop up
+    alert(created);
   };
 
   const handlerInputChange = (e) => {
@@ -29,6 +37,18 @@ function Create() {
       ...input,
       [e.target.name]: e.target.value,
     });
+
+    if (errors.hasOwnProperty(e.target.name) && !e.target.value) {
+      setErrors({
+        ...errors,
+        [e.target.name]: true,
+      });
+    } else if (errors.hasOwnProperty(e.target.name)) {
+      setErrors({
+        ...errors,
+        [e.target.name]: false,
+      });
+    }
   };
 
   const handlerSelecChange = (e) => {
@@ -48,6 +68,18 @@ function Create() {
       ...input,
       [e.target.name]: selecOpts,
     });
+
+    if (errors.hasOwnProperty(e.target.name) && !selecOpts.length) {
+      setErrors({
+        ...errors,
+        [e.target.name]: true,
+      });
+    } else if (errors.hasOwnProperty(e.target.name)) {
+      setErrors({
+        ...errors,
+        [e.target.name]: false,
+      });
+    }
   };
 
   return (
@@ -57,22 +89,30 @@ function Create() {
 
       <div>
         <form action="#" onSubmit={handlerSubmit}>
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="name">Title:</label>
           <input
+            title="Alfanumeric titles only."
             type="text"
             name="name"
             placeholder="FORTNITE 2"
             value={input.name}
             onChange={handlerInputChange}
+            required={true}
+            pattern="[a-zA-Z0-9]{1-30}"
           />
+          {errors.name && <small>A title is required!</small>}
           <label htmlFor="desc">Description:</label>
-          <input
-            type="text"
+          <textarea
             name="description"
-            placeholder="A game about forts and nites..."
+            cols="30"
+            rows="4"
+            placeholder="Game description..."
+            maxlength="10"
             value={input.description}
             onChange={handlerInputChange}
-          />
+            required={true}
+          ></textarea>
+          {errors.description && <small>A description is required!</small>}
           <label htmlFor="released">Release date:</label>
           <input
             type="text"
@@ -86,6 +126,8 @@ function Create() {
             type="number"
             name="rating"
             placeholder="0-5"
+            max={5}
+            min={0}
             value={input.rating}
             onChange={handlerInputChange}
           />
@@ -104,6 +146,7 @@ function Create() {
             name="platforms"
             multiple={true}
             onChange={handlerSelecChange}
+            required={true}
           >
             <option value="pc">PC</option>
             <option value="xbox">Xbox</option>
@@ -111,6 +154,9 @@ function Create() {
             <option value="mobile">Mobile</option>
             <option value="others">Others</option>
           </select>
+          {errors.platforms && (
+            <small>At least one platform is required!</small>
+          )}
           <input type="submit" value="Create new Game!" />
         </form>
       </div>

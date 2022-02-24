@@ -21,7 +21,7 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   const { success, error } = await postVideogame(req.body);
 
-  if (error) return res.status(400).json(error);
+  if (error) return res.json(error);
   return res.json(success);
 });
 

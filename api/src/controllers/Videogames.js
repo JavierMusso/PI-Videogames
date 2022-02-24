@@ -100,9 +100,6 @@ module.exports = {
     let { name, description, released, rating, platforms, genres, image } =
       body;
 
-    console.log("llego al back");
-    console.log(body);
-
     if (!name || typeof name !== "string")
       return { error: "Error: Not a valid Name" };
     if (!description || typeof description !== "string")
@@ -110,19 +107,20 @@ module.exports = {
     if (!platforms || typeof platforms !== "string")
       return { error: "Error: Not a valid platform" };
 
-    console.log("llego aca?");
-    console.log(image);
     let newVideogame = {
       name,
       description,
-      released,
-      rating,
+      released: released || "No date provided",
+      rating: rating || 0,
       platforms,
       image: image || "",
     };
 
     const [videogame, created] = await Videogame.findOrCreate({
-      where: newVideogame,
+      where: {
+        name: name,
+      },
+      defaults: newVideogame,
     });
 
     // parse genres to number
@@ -130,7 +128,8 @@ module.exports = {
     await videogame.addGenres(genres);
 
     if (created) return { success: "Game created succesfully!" };
-    return { success: "Game already exist!" };
+    console.log("game already exist");
+    return { error: "Error: game already exist!" };
   },
 
   async getGameByID(id) {
