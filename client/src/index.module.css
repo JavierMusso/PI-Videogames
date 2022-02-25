@@ -1,5 +1,32 @@
 @import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Roboto:300,700");
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+::-webkit-scrollbar {
+  width: 1em;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 100vw;
+  margin-block: 0.5em;
+  margin-top: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c13ef580;
+  border-radius: 100vw;
+  border: 2px solid #cf42db;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #cf42db;
+}
+
+body {
+  overflow: overlay;
+}
+
 * {
   font-family: "Roboto", sans-serif;
   font-weight: 300;

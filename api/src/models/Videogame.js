@@ -22,7 +22,7 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
     },
     rating: {
-      type: DataTypes.DECIMAL(10, 1),
+      type: DataTypes.DECIMAL(10, 2),
     },
     platforms: {
       type: DataTypes.STRING,

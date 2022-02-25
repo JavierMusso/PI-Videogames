@@ -128,6 +128,7 @@ function Create() {
             placeholder="0-5"
             max={5}
             min={0}
+            step="0.01"
             value={input.rating}
             onChange={handlerInputChange}
           />
