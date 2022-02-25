@@ -48,19 +48,19 @@ function FilterBox() {
         <label htmlFor="source">Games source</label>
         <div name="source">
           <button
-            className={source === "all" && styles.btn_toggleON}
+            className={source === "all" ? styles.btn_toggleON : undefined}
             onClick={() => handlerSelect("all")}
           >
             All
           </button>
           <button
-            className={source === "created" && styles.btn_toggleON}
+            className={source === "created" ? styles.btn_toggleON : undefined}
             onClick={() => handlerSelect("created")}
           >
             Created
           </button>
           <button
-            className={source === "rawg" && styles.btn_toggleON}
+            className={source === "rawg" ? styles.btn_toggleON : undefined}
             onClick={() => handlerSelect("rawg")}
           >
             RAWG

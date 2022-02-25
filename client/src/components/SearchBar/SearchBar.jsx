@@ -30,6 +30,7 @@ function SearchBar() {
   return (
     <form className={styles.SearchBar} onSubmit={handlerSubmit}>
       <input
+        title="Search by name."
         className={styles.input}
         value={input}
         onChange={(e) => {
@@ -37,6 +38,7 @@ function SearchBar() {
         }}
         type="search"
         placeholder="Search games..."
+        required
       />
       <button type="submit" className={styles.submit}>
         <img src={searchIcon} alt="asd" />
