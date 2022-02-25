@@ -38,7 +38,7 @@
 }
 
 .Landing .border .content h1 {
-  color: #c300ff;
+  color: #eed5ff;
   display: inline;
   font-size: 50px;
   text-shadow: 0 0 100px #fff, 0 0 42px #c300ff, 0 0 82px #c300ff;
@@ -50,7 +50,7 @@
 }
 
 .Landing .border .content a {
-  color: #e6e6fb;
+  color: #eed5ff;
   text-decoration: none;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;

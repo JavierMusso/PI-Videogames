@@ -188,7 +188,9 @@ function PaginationBar() {
       ) : (
         ""
       )}
-      {showSearchResults && searchResults.length ? (
+      {showSearchResults &&
+      searchResults.length &&
+      typeof searchResults !== "string" ? (
         <div
           className={styles.results}
           onClick={() => dispatch(showSearch(false))}

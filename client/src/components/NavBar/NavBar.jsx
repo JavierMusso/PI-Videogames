@@ -7,7 +7,7 @@ function NavBar() {
   return (
     <div className={styles.NavBar}>
       <div className={styles.content}>
-        <Link to="/">
+        <Link to="/home">
           <div className={styles.logo}>
             <h1>AtheG</h1>
             <span>All the games, one site.</span>

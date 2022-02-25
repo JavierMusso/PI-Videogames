@@ -15,7 +15,7 @@ function GameDetail() {
   const game = useSelector((state) => state.gameDetail);
 
   if (!game) {
-    return <div>CARGANDO...</div>;
+    return <div className={styles.loading}>CARGANDO...</div>;
   }
 
   if (typeof game === "string") return <Navigate to="/404" />;

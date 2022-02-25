@@ -1,10 +1,12 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { buildPages, showSearch } from "../../redux/actions";
 import Game from "../Game/Game";
 import PaginationBar from "../PaginationBar/PaginationBar";
 import styles from "./GamesContainer.module.css";
 
 function GamesContainer() {
+  const dispatch = useDispatch();
   const { pages, currentPage, searchResults, showSearchResults } = useSelector(
     (state) => state
   );
@@ -16,23 +18,28 @@ function GamesContainer() {
         {showSearchResults ? (
           searchResults.length ? (
             typeof searchResults === "string" ? (
-              <p>{searchResults}</p>
+              <p
+                className={styles.loading}
+                onClick={() => dispatch(showSearch(false))}
+              >
+                {searchResults}
+              </p>
             ) : (
               searchResults.map((game) => <Game key={game.id} props={game} />)
             )
           ) : (
-            <p>Cargando juegos...</p>
+            <p className={styles.loading}>Loading...</p>
           )
         ) : pages.length ? (
           typeof pages === "string" ? (
-            <p>{pages}</p>
+            <p className={styles.loading}>{pages}</p>
           ) : (
             pages[currentPage].map((game) => (
               <Game key={game.id} props={game} />
             ))
           )
         ) : (
-          <p>Cargando juegos...</p>
+          <p className={styles.loading}>Loading...</p>
         )}
       </div>
     </div>

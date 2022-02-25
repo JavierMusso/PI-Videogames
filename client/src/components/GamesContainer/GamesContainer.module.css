@@ -25,4 +25,11 @@
           justify-content: space-evenly;
   row-gap: 15px;
 }
+
+.loading {
+  color: #eed5ff;
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 40px;
+  text-shadow: 0 0 100px #fff, 0 0 42px #c300ff, 0 0 82px #c300ff;
+}
 /*# sourceMappingURL=GamesContainer.module.css.map */
