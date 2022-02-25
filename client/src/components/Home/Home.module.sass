@@ -5,7 +5,13 @@
     .content
         width: 1200px
         margin: auto
+        opacity: 0
+        animation: opIn 0.8s ease-in-out forwards
         .Filter
             padding-top: 90px
             display: flex
             justify-content: right
+
+@keyframes opIn
+  to 
+    opacity: 1

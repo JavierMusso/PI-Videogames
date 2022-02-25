@@ -7,6 +7,9 @@
 .Home .content {
   width: 1200px;
   margin: auto;
+  opacity: 0;
+  -webkit-animation: opIn 0.8s ease-in-out forwards;
+          animation: opIn 0.8s ease-in-out forwards;
 }
 
 .Home .content .Filter {
@@ -17,5 +20,17 @@
   -webkit-box-pack: right;
       -ms-flex-pack: right;
           justify-content: right;
+}
+
+@-webkit-keyframes opIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes opIn {
+  to {
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=Home.module.css.map */

@@ -62,7 +62,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
       };
 
     case GET_GAMES_BY_NAME:
-      return { ...state, searchResults: payload };
+      return { ...state, searchResults: payload, currentPage: 0 };
 
     case GET_GAME_BY_ID:
       if (!payload) return { ...state, gameDetail: "" };

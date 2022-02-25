@@ -29,6 +29,9 @@ precarga hacer un esqueleto en vez de loader ?
 
 ////////// COSAS QUE FALTAN HACER
 
+cuando busco, sacar la barra de paginacion, y mostrar:
+'mostrando N resultados para: game' con una X para cerrarlo
+
 css create
 
 loaders como la gente

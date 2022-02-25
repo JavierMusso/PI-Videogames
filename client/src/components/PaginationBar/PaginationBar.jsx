@@ -1,11 +1,13 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setCurrentPage } from "../../redux/actions";
+import { setCurrentPage, showSearch } from "../../redux/actions";
 import styles from "./PaginationBar.module.css";
 
 function PaginationBar() {
   const dispatch = useDispatch();
-  const { pages, currentPage } = useSelector((state) => state);
+  const { pages, currentPage, showSearchResults } = useSelector(
+    (state) => state
+  );
 
   let pagination;
 
@@ -187,8 +189,14 @@ function PaginationBar() {
       ) : (
         ""
       )}
-      {pagination}
-      {currentPage !== pages.length - 1 ? (
+      {showSearchResults ? (
+        <p onClick={() => dispatch(showSearch(false))}>
+          Showing N results for GAME. X
+        </p>
+      ) : (
+        pagination
+      )}
+      {!showSearchResults && currentPage !== pages.length - 1 ? (
         <button
           className={styles.btn_right}
           onClick={() => changeCurrentPage("right")}
