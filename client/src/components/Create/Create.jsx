@@ -27,6 +27,13 @@ function Create() {
     e.preventDefault();
 
     let newGame = input;
+
+    // validation
+    let regex = new RegExp(/^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$/);
+
+    if (!regex.test(input.name))
+      return alert("Title must contain letters and numbers only.");
+
     console.log(newGame);
     let created = await dispatch(addGame(newGame));
 
