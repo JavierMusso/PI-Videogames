@@ -1,9 +1,94 @@
 .FilterBox {
-  background-color: peru;
+  background-color: #250b61;
   width: 280px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  position: fixed;
+  z-index: 1;
+  top: 88px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 15px;
+  border-radius: 0px 0px 10px 10px;
+  color: #e8e5ec;
+  -webkit-box-shadow: inset 0px -15px 10px -15px #00000078;
+          box-shadow: inset 0px -15px 10px -15px #00000078;
+}
+
+.FilterBox label {
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 0 100px #fff, 0 0 42px #ea00ff, 0 0 82px #ea00ff, 0 0 92px #ea00ff, 0 0 102px #ea00ff;
+}
+
+.FilterBox button {
+  background-color: #733db9;
+  border: none;
+  border-radius: 40px 40px 0px 40px;
+  font-weight: bold;
+  color: #e8e5ec;
 }
 
 .FilterBox .btn_toggleON {
-  background-color: green;
+  background-color: #ea00ff;
+  -webkit-box-shadow: 0px 1px 10px 1px #ea00ff;
+          box-shadow: 0px 1px 10px 1px #ea00ff;
+}
+
+.FilterBox .source, .FilterBox .sort, .FilterBox .genres {
+  border-top: 2px solid #244ab4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 250px;
+  padding-block: 15px;
+}
+
+.FilterBox .source div, .FilterBox .sort div, .FilterBox .genres div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.FilterBox .sort {
+  gap: 5px;
+}
+
+.FilterBox .sort div {
+  gap: 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.FilterBox .sort .name {
+  margin-left: 6px;
+}
+
+.FilterBox .sort button {
+  width: 30px;
+  height: 30px;
 }
 /*# sourceMappingURL=FilterBox.module.css.map */

@@ -9,14 +9,18 @@ import {
   sortBy,
 } from "../../redux/actions";
 import styles from "./FilterBox.module.css";
+import arrowDown from "../../assets/chevron-down.svg";
+import arrowUp from "../../assets/chevron-up.svg";
 
 function FilterBox() {
   const dispatch = useDispatch();
   const { genres, genreInputs } = useSelector((state) => state);
   const [sorted, setSorted] = useState("AZ");
+  const [source, setSource] = useState("all");
 
   const handlerSelect = (source) => {
     setSorted();
+    setSource(source);
     dispatch(filterSource(source));
     dispatch(setGenreInputs());
     dispatch(buildPages());
@@ -40,27 +44,40 @@ function FilterBox() {
 
   return (
     <div className={styles.FilterBox}>
-      <label htmlFor="source">Show games:</label>
-      <select
-        name="source"
-        id="source"
-        onInput={(e) => handlerSelect(e.target.value)}
-      >
-        <option value="all">All</option>
-        <option value="created">Created</option>
-        <option value="rawg">RAWG</option>
-      </select>
-      <div>
-        <label htmlFor="">Sort by:</label>
-        <div>
-          <label>A-Z</label>
+      <div className={styles.source}>
+        <label htmlFor="source">Games source</label>
+        <div name="source">
+          <button
+            className={source === "all" && styles.btn_toggleON}
+            onClick={() => handlerSelect("all")}
+          >
+            All
+          </button>
+          <button
+            className={source === "created" && styles.btn_toggleON}
+            onClick={() => handlerSelect("created")}
+          >
+            Created
+          </button>
+          <button
+            className={source === "rawg" && styles.btn_toggleON}
+            onClick={() => handlerSelect("rawg")}
+          >
+            RAWG
+          </button>
+        </div>
+      </div>
+      <div className={styles.sort}>
+        <label htmlFor="sort">Sort by</label>
+        <div name="sort" className={styles.name}>
+          <label>Name</label>
           <button
             className={
               sorted === "AZ" ? styles.btn_toggleON : styles.btn_toggleOFF
             }
             onClick={() => handlerSortBy("AZ")}
           >
-            up
+            <img src={arrowUp} alt="" />
           </button>
           <button
             className={
@@ -68,11 +85,11 @@ function FilterBox() {
             }
             onClick={() => handlerSortBy("ZA")}
           >
-            down
+            <img src={arrowDown} alt="" />
           </button>
         </div>
         <div>
-          <label>STAR</label>
+          <label>Rating</label>
           <button
             className={
               sorted === "HighRated"
@@ -81,7 +98,7 @@ function FilterBox() {
             }
             onClick={() => handlerSortBy("HighRated")}
           >
-            up
+            <img src={arrowUp} alt="" />
           </button>
           <button
             className={
@@ -89,29 +106,27 @@ function FilterBox() {
             }
             onClick={() => handlerSortBy("LowRated")}
           >
-            down
+            <img src={arrowDown} alt="" />
           </button>
         </div>
       </div>
-      <div>
+      <div className={styles.genres}>
         <label htmlFor="genres">Genres</label>
-        <div name="genres" className={styles.div_genres}>
+        <div name="genres">
           {genres.length &&
             genres.map((genre) => {
               return (
-                <div key={genre.id}>
-                  <button
-                    key={genre.id}
-                    onClick={() => handlerGenres(genre.name)}
-                    className={
-                      genreInputs[genre.name]
-                        ? styles.btn_toggleON
-                        : styles.btn_toggleOFF
-                    }
-                  >
-                    {genre.name}
-                  </button>
-                </div>
+                <button
+                  key={genre.id}
+                  onClick={() => handlerGenres(genre.name)}
+                  className={
+                    genreInputs[genre.name]
+                      ? styles.btn_toggleON
+                      : styles.btn_toggleOFF
+                  }
+                >
+                  {genre.name}
+                </button>
               );
             })}
         </div>

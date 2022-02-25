@@ -1,5 +1,5 @@
 .Game {
-  background-color: #1d3d94;
+  background-color: #250b61;
   width: 266px;
   height: -webkit-min-content;
   height: -moz-min-content;
@@ -57,7 +57,9 @@
   -webkit-transform: scale(115%);
           transform: scale(115%);
   z-index: 1;
-  background-color: #c300ff;
+  background-color: #ea00ff;
+  -webkit-box-shadow: 0px 1px 10px 1px #ea00ff;
+          box-shadow: 0px 1px 10px 1px #ea00ff;
 }
 
 .Game:hover a {

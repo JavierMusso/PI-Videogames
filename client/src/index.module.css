@@ -7,8 +7,6 @@
 ::-webkit-scrollbar-track {
   background: transparent;
   border-radius: 100vw;
-  margin-block: 0.5em;
-  margin-top: 0.5em;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -21,6 +19,16 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #cf42db;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 body {

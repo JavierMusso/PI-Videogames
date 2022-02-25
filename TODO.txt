@@ -7,8 +7,6 @@ modo oscuro
 
 subir imagenes
 
-loaders
-
 en game detail, poner SHOW MORE en el texto si es muy grande
 
 traer varias imagenes, y mostrarlas con un slide en cada card ?
@@ -19,26 +17,17 @@ mostrar un random game on top of all, como si fuera un destacado.
 
 juegos recomendados para esta semana ?
 
-
 buscados recientemente
 
+precarga hacer un esqueleto en vez de loader ?
 
 
 
 ////////// COSAS QUE FALTAN HACER
 
-
-probar crear juego con puntaje flotante
-
-css scrollbar
-
-css home
-
 css create
 
 css detail
-
-css About
 
 loaders como la gente
 

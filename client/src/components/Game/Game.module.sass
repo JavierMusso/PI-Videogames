@@ -1,7 +1,9 @@
 $text: #e8e5ec
+$color: #ea00ff
+$bg: #250b61
     
 .Game
-    background-color: #1d3d94
+    background-color: $bg
     width: 266px
     height: min-content
     padding-block: 10px
@@ -34,6 +36,7 @@ $text: #e8e5ec
 .Game:hover
     transform: scale(115%)
     z-index: 1
-    background-color: #c300ff
+    background-color: $color
+    box-shadow: 0px 1px 10px 1px $color
     a
         text-decoration: underline

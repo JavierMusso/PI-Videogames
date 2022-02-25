@@ -18,8 +18,8 @@ function Home() {
     <div className={styles.Home}>
       <div className={styles.content}>
         <NavBar />
-        <div className={styles.testFilter}>
-          <FilterBox />
+        <FilterBox />
+        <div className={styles.Filter}>
           <GamesContainer />
         </div>
       </div>

@@ -1,7 +1,55 @@
-.FilterBox
-    background-color: peru
-    width: 280px
+$color: #ea00ff
+$bg: #250b61
+$text: #e8e5ec
     
+.FilterBox
+    background-color: $bg
+    width: 280px
+    height: min-content
+    position: fixed
+    z-index: 1
+    top: 88px
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding-top: 15px
+    border-radius: 0px 0px 10px 10px
+    color: $text
+    box-shadow: inset 0px -15px 10px -15px #00000078
+    label
+        font-weight: 700
+        letter-spacing: 1px
+        text-shadow:  0 0 100px #fff, 0 0 42px $color, 0 0 82px $color, 0 0 92px $color, 0 0 102px $color
+    button
+        background-color: #733db9
+        border: none
+        border-radius: 40px 40px 0px 40px
+        font-weight: bold
+        color: $text
     .btn_toggleON
-        background-color: green
+        background-color: $color
+        box-shadow: 0px 1px 10px 1px $color
+    .source, .sort, .genres
+        border-top: 2px solid #244ab4
+        display: flex
+        flex-direction: column
+        align-items: center
+        width: 250px
+        padding-block: 15px 
+        div
+            display: flex
+            gap: 10px
+            flex-wrap: wrap
+            justify-content: center
+    .sort
+        gap: 5px
+        div
+            gap: 5px
+            align-items: center
+        .name
+            margin-left: 6px
+        button
+            width: 30px
+            height: 30px
+    
 
