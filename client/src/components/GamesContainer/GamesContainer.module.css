@@ -1,4 +1,5 @@
 .GamesContainer {
+  margin-block: 15px;
   width: 920px;
   display: -webkit-box;
   display: -ms-flexbox;

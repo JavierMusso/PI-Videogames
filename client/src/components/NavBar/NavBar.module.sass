@@ -1,10 +1,70 @@
+$color: #ff00c8
+    
 .NavBar
     background-color: #1d3d94
     padding: 20px
+    padding-inline: 40px 
+    border-radius: 0px 0px 10px 0px
     .content
         display: flex
         align-items: center
         justify-content: space-between
-        div
+        color: #e8e5ec
+        a
+            color: #e8e5ec
+            text-decoration: none
+        .logo
+            display: flex
+            align-items: flex-end
+            text-shadow:  0 0 100px #fff, 0 0 42px $color, 0 0 82px $color, 0 0 92px $color, 0 0 102px $color
+            h1
+                text-decoration: underline
+            span
+                color: #cfbaf0
+                margin: 5px
+        .links
             display: flex
             gap: 30px
+            align-items: center
+            .create
+                display: flex
+                align-items: center
+                .arrow
+                    opacity: 0
+                    width: 0
+                    height: 0
+                    border-top: 8px solid transparent
+                    border-bottom: 8px solid transparent
+                    border-left: 8px solid $color
+                    margin-right: 8px
+                p
+                    font-family: "Press Start 2P", sans-serif
+                    font-size: 12px
+                    letter-spacing: 2px
+            .create:hover
+                .arrow
+                    opacity: 1
+                p:hover
+                    color: $color
+                    text-decoration: underline
+            .about
+                display: flex
+                align-items: center
+                .arrow
+                    opacity: 0
+                    width: 0
+                    height: 0
+                    border-top: 8px solid transparent
+                    border-bottom: 8px solid transparent
+                    border-left: 8px solid $color
+                    margin-right: 8px
+                p
+                    font-family: "Press Start 2P", sans-serif
+                    font-size: 12px
+                    letter-spacing: 2px
+            .about:hover
+                .arrow
+                    opacity: 1
+                p:hover
+                    color: $color
+                    text-decoration: underline

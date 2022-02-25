@@ -1,6 +1,9 @@
+$color: #ff00c8
+
 .PaginationBar
     display: flex
-    margin-block: 15px 
+    margin-block: 15px
+    margin-top: 0px
     button
         border: none
         background-color: #1d3d94
@@ -12,12 +15,18 @@
     button:hover
         background-color: #4260b3
     .btn_left
+        color: #af81eb
         border-radius: 50px 0px 0px 50px
     .btn_right
+        color: #af81eb
         border-radius: 0px 50px 50px 0px
-
+    .btn_fill
+        cursor: default
+    .btn_fill:hover
+        background-color: #1d3d94
     .currentPage
         background-color: #e8e5ec
+        border-radius: 5px
         color: #1d3d94
         transform: scale(120%)
     .currentPage:hover

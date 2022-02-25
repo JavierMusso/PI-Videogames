@@ -30,16 +30,41 @@
 }
 
 .NotFound a {
-  font-family: "Press Start 2P", sans-serif;
   color: #e6e6fb;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.NotFound a .arrow {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #c300ff;
+  margin-right: 10px;
+}
+
+.NotFound a p {
+  font-family: "Press Start 2P", sans-serif;
   font-size: 20px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
 }
 
 .NotFound a:hover {
-  -webkit-transform: scale(110%);
-          transform: scale(110%);
-  cursor: pointer;
+  color: #c300ff;
+}
+
+.NotFound a:hover .arrow {
+  opacity: 1;
+}
+
+.NotFound a:hover p {
+  text-decoration: underline;
 }
 /*# sourceMappingURL=NotFound.module.css.map */

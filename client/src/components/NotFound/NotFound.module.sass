@@ -21,11 +21,25 @@ $color: #2600ff
         text-shadow:  0 0 100px #fff, 0 0 42px $color, 0 0 82px $color, 0 0 92px $color, 0 0 102px $color
         margin-bottom: 50px
     a
-        font-family: "Press Start 2P", sans-serif
         color: #e6e6fb
-        font-size: 20px
-        transition: all 0.3s ease
-    a:hover
-        transform: scale(110%)
+        text-decoration: none
+        display: flex
+        align-items: center
         cursor: pointer
-
+        .arrow
+            opacity: 0
+            width: 0
+            height: 0
+            border-top: 10px solid transparent
+            border-bottom: 10px solid transparent
+            border-left: 10px solid #c300ff
+            margin-right: 10px
+        p
+            font-family: "Press Start 2P", sans-serif
+            font-size: 20px
+    a:hover
+        color: #c300ff
+        .arrow
+            opacity: 1
+        p
+            text-decoration: underline

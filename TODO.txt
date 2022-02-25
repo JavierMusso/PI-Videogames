@@ -27,11 +27,20 @@ buscados recientemente
 
 ////////// COSAS QUE FALTAN HACER
 
-creacion ---> dar feedback, y hacer validacion
+
+probar crear juego con puntaje flotante
+
+css scrollbar
+
+css home
+
+css create
+
+css detail
+
+css About
 
 loaders como la gente
-
-estilos
 
 testing:
     *front

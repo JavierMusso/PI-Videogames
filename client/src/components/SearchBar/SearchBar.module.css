@@ -1,1 +1,61 @@
-/* No CSS *//*# sourceMappingURL=SearchBar.module.css.map */
+.SearchBar {
+  position: relative;
+}
+
+.SearchBar .input {
+  width: 280px;
+  background-color: #244ab4;
+  border-radius: 50px;
+  border: none;
+  color: #e8e5ec;
+  padding: 10px 0px 10px 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-box-shadow: inset 0px -15px 10px -15px #00000078;
+          box-shadow: inset 0px -15px 10px -15px #00000078;
+}
+
+.SearchBar .input::-webkit-input-placeholder {
+  color: #e8e5ec9f;
+}
+
+.SearchBar .input:-ms-input-placeholder {
+  color: #e8e5ec9f;
+}
+
+.SearchBar .input::-ms-input-placeholder {
+  color: #e8e5ec9f;
+}
+
+.SearchBar .input::placeholder {
+  color: #e8e5ec9f;
+}
+
+.SearchBar .input:focus {
+  outline: none;
+  -webkit-transform: scale(110%);
+          transform: scale(110%);
+  background-color: #607ed1;
+}
+
+.SearchBar .submit {
+  width: 35px;
+  height: 35px;
+  background-color: #3f28a5;
+  border-radius: 50px;
+  position: absolute;
+  border: none;
+  color: #e8e5ec;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.SearchBar .submit:hover {
+  background-color: #ff00c8;
+  -webkit-transform: scale(110%);
+          transform: scale(110%);
+}
+/*# sourceMappingURL=SearchBar.module.css.map */

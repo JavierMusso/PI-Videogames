@@ -8,7 +8,10 @@ function NotFound() {
       <h2>404</h2>
       <h1>Game Over</h1>
 
-      <Link to={"/home"}>Continue ?</Link>
+      <Link to={"/home"}>
+        <div className={styles.arrow}></div>
+        <p>Continue ?</p>
+      </Link>
     </div>
   );
 }

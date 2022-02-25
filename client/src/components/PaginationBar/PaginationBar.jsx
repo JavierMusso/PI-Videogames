@@ -40,7 +40,7 @@ function PaginationBar() {
         >
           3
         </button>
-        <button>...</button>
+        <button className={styles.btn_fill}>...</button>
         <button onClick={() => dispatch(setCurrentPage(pages.length - 1))}>
           {pages.length}
         </button>
@@ -68,7 +68,7 @@ function PaginationBar() {
           3
         </button>
         <button onClick={() => dispatch(setCurrentPage(3))}>4</button>
-        <button>...</button>
+        <button className={styles.btn_fill}>...</button>
         <button onClick={() => dispatch(setCurrentPage(pages.length - 1))}>
           {pages.length}
         </button>
@@ -78,7 +78,7 @@ function PaginationBar() {
     pagination = (
       <div className={styles.container}>
         <button onClick={() => dispatch(setCurrentPage(0))}>1</button>
-        <button>...</button>
+        <button className={styles.btn_fill}>...</button>
         <button onClick={() => dispatch(setCurrentPage(currentPage - 1))}>
           {currentPage}
         </button>
@@ -91,7 +91,7 @@ function PaginationBar() {
         <button onClick={() => dispatch(setCurrentPage(currentPage + 1))}>
           {currentPage + 2}
         </button>
-        <button>...</button>
+        <button className={styles.btn_fill}>...</button>
         <button onClick={() => dispatch(setCurrentPage(pages.length - 1))}>
           {pages.length}
         </button>
@@ -101,7 +101,7 @@ function PaginationBar() {
     pagination = (
       <div className={styles.container}>
         <button onClick={() => dispatch(setCurrentPage(0))}>1</button>
-        <button>...</button>
+        <button className={styles.btn_fill}>...</button>
         <button onClick={() => dispatch(setCurrentPage(currentPage - 1))}>
           {currentPage}
         </button>
@@ -123,7 +123,7 @@ function PaginationBar() {
     pagination = (
       <div className={styles.container}>
         <button onClick={() => dispatch(setCurrentPage(0))}>1</button>
-        <button>...</button>
+        <button className={styles.btn_fill}>...</button>
         <button onClick={() => dispatch(setCurrentPage(currentPage - 1))}>
           {currentPage}
         </button>
@@ -142,7 +142,7 @@ function PaginationBar() {
     pagination = (
       <div className={styles.container}>
         <button onClick={() => dispatch(setCurrentPage(0))}>1</button>
-        <button>...</button>
+        <button className={styles.btn_fill}>...</button>
         <button onClick={() => dispatch(setCurrentPage(currentPage - 2))}>
           {currentPage - 1}
         </button>

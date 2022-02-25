@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getGames, setCurrentPage, showSearch } from "../../redux/actions";
 import styles from "./SearchBar.module.css";
+import searchIcon from "../../assets/search-icon.svg";
 
 function SearchBar() {
   const dispatch = useDispatch();
@@ -21,19 +22,20 @@ function SearchBar() {
   };
 
   return (
-    <div className={styles.SearchBar}>
-      <form action="#" onSubmit={handlerSubmit}>
-        <input
-          value={input}
-          onChange={(e) => {
-            setInput(e.target.value);
-          }}
-          type="search"
-          placeholder="Search for game names..."
-        />
-        <input type="submit" value="Search" />
-      </form>
-    </div>
+    <form className={styles.SearchBar} onSubmit={handlerSubmit}>
+      <input
+        className={styles.input}
+        value={input}
+        onChange={(e) => {
+          setInput(e.target.value);
+        }}
+        type="search"
+        placeholder="Search games..."
+      />
+      <button type="submit" className={styles.submit}>
+        <img src={searchIcon} alt="asd" />
+      </button>
+    </form>
   );
 }
 

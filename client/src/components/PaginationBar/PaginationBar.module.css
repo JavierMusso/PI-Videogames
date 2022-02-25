@@ -3,6 +3,7 @@
   display: -ms-flexbox;
   display: flex;
   margin-block: 15px;
+  margin-top: 0px;
 }
 
 .PaginationBar button {
@@ -20,15 +21,26 @@
 }
 
 .PaginationBar .btn_left {
+  color: #af81eb;
   border-radius: 50px 0px 0px 50px;
 }
 
 .PaginationBar .btn_right {
+  color: #af81eb;
   border-radius: 0px 50px 50px 0px;
+}
+
+.PaginationBar .btn_fill {
+  cursor: default;
+}
+
+.PaginationBar .btn_fill:hover {
+  background-color: #1d3d94;
 }
 
 .PaginationBar .currentPage {
   background-color: #e8e5ec;
+  border-radius: 5px;
   color: #1d3d94;
   -webkit-transform: scale(120%);
           transform: scale(120%);

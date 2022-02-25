@@ -6,7 +6,7 @@
   height: min-content;
   padding-block: 10px;
   position: relative;
-  border-radius: 10px;
+  border-radius: 5px;
   -webkit-box-shadow: inset 0px -15px 10px -15px #00000078;
           box-shadow: inset 0px -15px 10px -15px #00000078;
   -webkit-transition: all 0.4s ease;
@@ -56,7 +56,7 @@
   -webkit-transform: scale(115%);
           transform: scale(115%);
   z-index: 1;
-  background-color: #152a62;
+  background-color: #c300ff;
 }
 
 .Game:hover a {

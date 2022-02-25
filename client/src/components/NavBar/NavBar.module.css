@@ -1,6 +1,8 @@
 .NavBar {
   background-color: #1d3d94;
   padding: 20px;
+  padding-inline: 40px;
+  border-radius: 0px 0px 10px 0px;
 }
 
 .NavBar .content {
@@ -13,12 +15,108 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  color: #e8e5ec;
 }
 
-.NavBar .content div {
+.NavBar .content a {
+  color: #e8e5ec;
+  text-decoration: none;
+}
+
+.NavBar .content .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  text-shadow: 0 0 100px #fff, 0 0 42px #ff00c8, 0 0 82px #ff00c8, 0 0 92px #ff00c8, 0 0 102px #ff00c8;
+}
+
+.NavBar .content .logo h1 {
+  text-decoration: underline;
+}
+
+.NavBar .content .logo span {
+  color: #cfbaf0;
+  margin: 5px;
+}
+
+.NavBar .content .links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.NavBar .content .links .create {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.NavBar .content .links .create .arrow {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid #ff00c8;
+  margin-right: 8px;
+}
+
+.NavBar .content .links .create p {
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.NavBar .content .links .create:hover .arrow {
+  opacity: 1;
+}
+
+.NavBar .content .links .create:hover p:hover {
+  color: #ff00c8;
+  text-decoration: underline;
+}
+
+.NavBar .content .links .about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.NavBar .content .links .about .arrow {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid #ff00c8;
+  margin-right: 8px;
+}
+
+.NavBar .content .links .about p {
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.NavBar .content .links .about:hover .arrow {
+  opacity: 1;
+}
+
+.NavBar .content .links .about:hover p:hover {
+  color: #ff00c8;
+  text-decoration: underline;
 }
 /*# sourceMappingURL=NavBar.module.css.map */
