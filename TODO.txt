@@ -25,11 +25,13 @@ precarga hacer un esqueleto en vez de loader ?
 
 ////////// COSAS QUE FALTAN HACER
 
-css create
-
 css detail
 
+css create
+
 loaders como la gente
+
+deploy viejita
 
 testing:
     *front

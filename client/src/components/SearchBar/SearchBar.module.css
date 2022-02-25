@@ -32,10 +32,29 @@
 }
 
 .SearchBar .input:focus {
+  color: #390050;
   outline: none;
   -webkit-transform: scale(110%);
           transform: scale(110%);
-  background-color: #607ed1;
+  background-color: #aabcee;
+  -webkit-box-shadow: 0px 1px 10px 1px #ea00ff;
+          box-shadow: 0px 1px 10px 1px #ea00ff;
+}
+
+.SearchBar .input:focus::-webkit-input-placeholder {
+  color: #504157;
+}
+
+.SearchBar .input:focus:-ms-input-placeholder {
+  color: #504157;
+}
+
+.SearchBar .input:focus::-ms-input-placeholder {
+  color: #504157;
+}
+
+.SearchBar .input:focus::placeholder {
+  color: #504157;
 }
 
 .SearchBar .submit {
