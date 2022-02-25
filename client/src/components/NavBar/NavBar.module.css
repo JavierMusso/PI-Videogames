@@ -82,11 +82,11 @@
   letter-spacing: 2px;
 }
 
-.NavBar .content .links .create:hover .arrow {
+.NavBar .content .links .create:hover .arrow, .NavBar .content .links .create:focus .arrow {
   opacity: 1;
 }
 
-.NavBar .content .links .create:hover p:hover {
+.NavBar .content .links .create:hover p:hover, .NavBar .content .links .create:focus p:hover {
   color: #ff00c8;
   text-decoration: underline;
 }
@@ -116,11 +116,11 @@
   letter-spacing: 2px;
 }
 
-.NavBar .content .links .about:hover .arrow {
+.NavBar .content .links .about:hover .arrow, .NavBar .content .links .about:focus .arrow {
   opacity: 1;
 }
 
-.NavBar .content .links .about:hover p:hover {
+.NavBar .content .links .about:hover p:hover, .NavBar .content .links .about:focus p:hover {
   color: #ff00c8;
   text-decoration: underline;
 }

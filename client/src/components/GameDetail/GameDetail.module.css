@@ -36,9 +36,13 @@
       justify-content: space-around;
 }
 
+.GameDetail .title h1 {
+  text-shadow: 0 0 100px #fff, 0 0 42px #c300ff, 0 0 82px #c300ff, 0 0 92px #c300ff, 0 0 102px #c300ff;
+}
+
 .GameDetail .game {
   background-color: #4b4b4b8f;
-  border-radius: 0 45px;
+  border-radius: 0 40px;
   margin: 5px;
   width: 1200px;
   padding: 40px;

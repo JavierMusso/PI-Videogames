@@ -1,7 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { addGame } from "../../redux/actions";
+import styles from "./Create.module.css";
 
 function Create() {
   const dispatch = useDispatch();
@@ -83,83 +85,108 @@ function Create() {
   };
 
   return (
-    <div className="Create">
-      <h1>Create</h1>
-      <small>validacion de algunos datos con javascript</small>
-
-      <div>
-        <form action="#" onSubmit={handlerSubmit}>
-          <label htmlFor="name">Title:</label>
-          <input
-            title="Alfanumeric titles only."
-            type="text"
-            name="name"
-            placeholder="FORTNITE 2"
-            value={input.name}
-            onChange={handlerInputChange}
-            required={true}
-            pattern="[a-zA-Z0-9]{1-30}"
-          />
-          {errors.name && <small>A title is required!</small>}
-          <label htmlFor="desc">Description:</label>
-          <textarea
-            name="description"
-            cols="30"
-            rows="4"
-            placeholder="Game description..."
-            maxlength="10"
-            value={input.description}
-            onChange={handlerInputChange}
-            required={true}
-          ></textarea>
-          {errors.description && <small>A description is required!</small>}
-          <label htmlFor="released">Release date:</label>
-          <input
-            type="text"
-            name="released"
-            placeholder="2000-1-1"
-            value={input.released}
-            onChange={handlerInputChange}
-          />
-          <label htmlFor="rating">Rating:</label>
-          <input
-            type="number"
-            name="rating"
-            placeholder="0-5"
-            max={5}
-            min={0}
-            step="0.01"
-            value={input.rating}
-            onChange={handlerInputChange}
-          />
-          <label htmlFor="genres">Genres:</label>
-          <select name="genres" multiple={true} onChange={handlerSelecChange}>
-            {genres.map((genre) => {
-              return (
-                <option key={genre.id} value={genre.id}>
-                  {genre.name}
-                </option>
-              );
-            })}
-          </select>
-          <label htmlFor="platforms">Platforms:</label>
-          <select
-            name="platforms"
-            multiple={true}
-            onChange={handlerSelecChange}
-            required={true}
-          >
-            <option value="pc">PC</option>
-            <option value="xbox">Xbox</option>
-            <option value="playstation">PlayStation</option>
-            <option value="mobile">Mobile</option>
-            <option value="others">Others</option>
-          </select>
-          {errors.platforms && (
-            <small>At least one platform is required!</small>
-          )}
-          <input type="submit" value="Create new Game!" />
-        </form>
+    <div className={styles.Create}>
+      <div className={styles.border}>
+        <div className={styles.container}>
+          <h1>New Game</h1>
+          <form action="#" onSubmit={handlerSubmit}>
+            <div className={styles.inputs}>
+              <div className={styles.title_desc}>
+                <label htmlFor="name">Title:</label>
+                <input
+                  title="Alfanumeric titles only."
+                  type="text"
+                  name="name"
+                  placeholder="Game title..."
+                  value={input.name}
+                  onChange={handlerInputChange}
+                  required={true}
+                  pattern="[a-zA-Z0-9]{1-30}"
+                />
+                {errors.name && <small>A title is required!</small>}
+                <label htmlFor="desc">Description:</label>
+                <textarea
+                  name="description"
+                  cols="30"
+                  rows="4"
+                  placeholder="A description of the game..."
+                  maxlength="150"
+                  value={input.description}
+                  onChange={handlerInputChange}
+                  required={true}
+                ></textarea>
+                {errors.description && (
+                  <small>A description is required!</small>
+                )}
+              </div>
+              <div className={styles.relesd_genres}>
+                <label htmlFor="released">Release date:</label>
+                <input
+                  type="text"
+                  name="released"
+                  placeholder="YY/MM/DD"
+                  value={input.released}
+                  onChange={handlerInputChange}
+                />
+                <label htmlFor="genres">Genres:</label>
+                <select
+                  name="genres"
+                  multiple={true}
+                  onChange={handlerSelecChange}
+                  size="5"
+                >
+                  {genres.map((genre) => {
+                    return (
+                      <option key={genre.id} value={genre.id}>
+                        {genre.name}
+                      </option>
+                    );
+                  })}
+                </select>
+              </div>
+              <div className={styles.rating_platforms}>
+                <label htmlFor="rating">Rating:</label>
+                <input
+                  type="number"
+                  name="rating"
+                  placeholder="0-5.00"
+                  max={5}
+                  min={0}
+                  step="0.01"
+                  value={input.rating}
+                  onChange={handlerInputChange}
+                />
+                <label htmlFor="platforms">Platforms:</label>
+                <select
+                  name="platforms"
+                  multiple={true}
+                  onChange={handlerSelecChange}
+                  required={true}
+                  size="5"
+                >
+                  <option value="pc">PC</option>
+                  <option value="xbox">Xbox</option>
+                  <option value="playstation">PlayStation</option>
+                  <option value="mobile">Mobile</option>
+                  <option value="others">Others</option>
+                </select>
+                {errors.platforms && (
+                  <small>At least one platform is required!</small>
+                )}
+              </div>
+            </div>
+            <div className={styles.buttons}>
+              <div className={styles.submit}>
+                <div className={styles.arrow}></div>
+                <input type="submit" value="Ready!" />
+              </div>
+              <Link to="/home">
+                <div className={styles.arrow}></div>
+                <p>Back?</p>
+              </Link>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );

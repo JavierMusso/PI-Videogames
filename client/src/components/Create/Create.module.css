@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+.Create {
+  background-image: url("../../assets/BG-waves.svg");
+  min-height: 100vh;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Create .border {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  margin: auto;
+  border: 5px solid #c300ff;
+  border-radius: 0 50px;
+  -webkit-box-shadow: 0px 1px 10px 1px #c300ff;
+          box-shadow: 0px 1px 10px 1px #c300ff;
+}
+
+.Create .border .container {
+  background-color: #4b4b4b8f;
+  border-radius: 0 40px;
+  margin: 5px;
+  padding: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #eed5ff;
+}
+
+.Create .border .container h1 {
+  text-shadow: 0 0 100px #fff, 0 0 42px #c300ff, 0 0 82px #c300ff, 0 0 92px #c300ff, 0 0 102px #c300ff;
+}
+
+.Create .border .container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+}
+
+.Create .border .container .inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
+}
+
+.Create .border .container .inputs input, .Create .border .container .inputs textarea, .Create .border .container .inputs select {
+  background-color: #eed5ff;
+  border: 1px solid #c300ff;
+  border-radius: 10px 10px 0 10px;
+  padding: 5px;
+}
+
+.Create .border .container .inputs select option:checked {
+  background-color: #c300ff;
+  border-radius: 10px 10px 0 10px;
+}
+
+.Create .border .container .inputs small {
+  color: #c300ff;
+}
+
+.Create .border .container .inputs div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.Create .border .container .inputs div label {
+  letter-spacing: 1px;
+  margin-top: 20px;
+}
+
+.buttons {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  font-size: 22px;
+}
+
+.buttons .submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.buttons .submit .arrow {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #c300ff;
+  margin-right: 10px;
+}
+
+.buttons .submit input {
+  font-family: "Press Start 2P", sans-serif;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #eed5ff;
+}
+
+.buttons .submit:hover .arrow, .buttons .submit:focus .arrow {
+  opacity: 1;
+}
+
+.buttons .submit:hover input, .buttons .submit:focus input {
+  color: #c300ff;
+  text-decoration: underline;
+}
+
+.buttons a {
+  color: #eed5ff;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.buttons a .arrow {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #c300ff;
+  margin-right: 10px;
+}
+
+.buttons a p {
+  font-family: "Press Start 2P", sans-serif;
+}
+
+.buttons a:hover, .buttons a:focus {
+  color: #c300ff;
+}
+
+.buttons a:hover .arrow, .buttons a:focus .arrow {
+  opacity: 1;
+}
+
+.buttons a:hover p, .buttons a:focus p {
+  text-decoration: underline;
+}
+/*# sourceMappingURL=Create.module.css.map */

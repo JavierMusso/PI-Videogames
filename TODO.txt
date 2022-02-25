@@ -25,8 +25,6 @@ buscados recientemente
 
 ////////// COSAS QUE FALTAN HACER
 
-css create
-
 loaders como la gente
 
 deploy viejita
