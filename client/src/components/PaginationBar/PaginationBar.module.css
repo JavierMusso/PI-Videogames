@@ -51,4 +51,39 @@
 .PaginationBar .currentPage:hover {
   background-color: #e8e5ec;
 }
+
+.results {
+  color: #e8e5ec;
+  background-color: #733db9;
+  border-radius: 50px 50px 0 50px;
+  padding: 5px;
+  padding-inline: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0px -15px 10px -15px #00000078;
+          box-shadow: inset 0px -15px 10px -15px #00000078;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.results span {
+  font-weight: bold;
+  color: #ff00c8;
+}
+
+.results button {
+  border-radius: 50px;
+  height: 30px;
+  width: 30px;
+}
+
+.results:hover {
+  background-color: #945eda;
+}
 /*# sourceMappingURL=PaginationBar.module.css.map */

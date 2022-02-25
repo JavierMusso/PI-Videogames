@@ -1,7 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getGames, setCurrentPage, showSearch } from "../../redux/actions";
+import {
+  getGames,
+  setCurrentPage,
+  setSearchInput,
+  showSearch,
+} from "../../redux/actions";
 import styles from "./SearchBar.module.css";
 import searchIcon from "../../assets/search-icon.svg";
 
@@ -12,6 +17,7 @@ function SearchBar() {
   const handlerSubmit = (e) => {
     e.preventDefault();
     if (input) {
+      dispatch(setSearchInput(input));
       dispatch(showSearch(true));
       dispatch(getGames(input));
     } else {

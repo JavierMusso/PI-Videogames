@@ -18,8 +18,8 @@
   border-radius: 0 50px;
   -webkit-box-shadow: 0px 1px 10px 1px #c300ff;
           box-shadow: 0px 1px 10px 1px #c300ff;
-  -webkit-transform: scale(90%);
-          transform: scale(90%);
+  -webkit-transform: scale(80%);
+          transform: scale(80%);
 }
 
 .GameDetail .title {

@@ -12,6 +12,7 @@ export const FILTER_SOURCE = "FILTER_SOURCE";
 export const SORT_BY = "SORT_BY";
 export const FILTER_GENRE = "FILTER_GENRE";
 export const SET_GENRE_INPUTS = "SET_GENRE_INPUTS";
+export const SET_SEARCH_INPUT = "SET_SEARCH_INPUT";
 
 // armo las paginas, lo llamo cada vez que cambio la cantidad de juegos
 export const buildPages = () => {
@@ -21,6 +22,10 @@ export const buildPages = () => {
 // setCurrent lo uso para updatear la pagina que quiero mostrar
 export const setCurrentPage = (payload) => {
   return { type: SET_CURRENT, payload: payload };
+};
+
+export const setSearchInput = (input) => {
+  return { type: SET_SEARCH_INPUT, payload: input };
 };
 
 export const showSearch = (bool) => {

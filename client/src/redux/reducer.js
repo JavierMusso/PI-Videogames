@@ -8,6 +8,7 @@ import {
   GET_GENRES,
   SET_CURRENT,
   SET_GENRE_INPUTS,
+  SET_SEARCH_INPUT,
   SHOW_SEARCH,
   SORT_BY,
 } from "./actions";
@@ -22,6 +23,7 @@ const initialState = {
   filteredGames: [],
   genreInputs: {},
   filterByGenreGames: [],
+  searchInput: "",
 };
 
 let gamesPerPage = 15;
@@ -48,6 +50,12 @@ const rootReducer = (state = initialState, { type, payload }) => {
         currentPage: payload,
         searchResults: [],
         showSearchResults: false,
+      };
+
+    case SET_SEARCH_INPUT:
+      return {
+        ...state,
+        searchInput: payload,
       };
 
     case SHOW_SEARCH:

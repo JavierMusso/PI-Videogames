@@ -5,9 +5,8 @@ import styles from "./PaginationBar.module.css";
 
 function PaginationBar() {
   const dispatch = useDispatch();
-  const { pages, currentPage, showSearchResults } = useSelector(
-    (state) => state
-  );
+  const { pages, currentPage, showSearchResults, searchResults, searchInput } =
+    useSelector((state) => state);
 
   let pagination;
 
@@ -189,12 +188,17 @@ function PaginationBar() {
       ) : (
         ""
       )}
-      {showSearchResults ? (
-        <p onClick={() => dispatch(showSearch(false))}>
-          Showing N results for GAME. X
-        </p>
+      {showSearchResults && searchResults.length ? (
+        <div
+          className={styles.results}
+          onClick={() => dispatch(showSearch(false))}
+        >
+          Showing<span>{searchResults.length}</span>results for
+          <span>{searchInput}</span>
+          <button>X</button>
+        </div>
       ) : (
-        pagination
+        !showSearchResults && pagination
       )}
       {!showSearchResults && currentPage !== pages.length - 1 ? (
         <button
