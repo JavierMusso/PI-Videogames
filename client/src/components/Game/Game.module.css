@@ -15,6 +15,7 @@
 
 .Game .title {
   padding-inline: 15px;
+  letter-spacing: 1px;
 }
 
 .Game small {

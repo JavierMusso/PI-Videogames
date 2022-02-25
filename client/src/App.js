@@ -7,7 +7,7 @@ import GameDetail from "./components/GameDetail/GameDetail";
 import Home from "./components/Home/Home";
 import Landing from "./components/Landing/Landing";
 import NotFound from "./components/NotFound/NotFound";
-import { buildPages, getGames, getGenres } from "./redux/actions";
+import { buildPages, getGames, getGenres, sortBy } from "./redux/actions";
 
 function App() {
   const dispatch = useDispatch();
@@ -16,6 +16,7 @@ function App() {
     (async () => {
       dispatch(getGenres());
       await dispatch(getGames());
+      dispatch(sortBy("AZ"));
       dispatch(buildPages());
     })();
   }, [dispatch]);

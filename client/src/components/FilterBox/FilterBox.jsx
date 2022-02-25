@@ -13,10 +13,10 @@ import styles from "./FilterBox.module.css";
 function FilterBox() {
   const dispatch = useDispatch();
   const { genres, genreInputs } = useSelector((state) => state);
-  const [sorted, setSorted] = useState();
+  const [sorted, setSorted] = useState("AZ");
 
   const handlerSelect = (source) => {
-    setSorted(false);
+    setSorted();
     dispatch(filterSource(source));
     dispatch(setGenreInputs());
     dispatch(buildPages());
@@ -29,7 +29,6 @@ function FilterBox() {
   };
 
   const handlerGenres = (genre) => {
-    setSorted(false);
     dispatch(
       setGenreInputs({
         [genre]: !genreInputs[genre],
