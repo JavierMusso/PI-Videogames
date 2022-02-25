@@ -15,52 +15,78 @@
 }
 
 .Landing .border {
-  border: 5px solid #c6b9d8;
+  border: 5px solid #c300ff;
   border-radius: 0 50px;
   -webkit-transform: translateY(-200%);
           transform: translateY(-200%);
   -webkit-animation: comeIn 0.8s ease-in-out forwards;
           animation: comeIn 0.8s ease-in-out forwards;
   opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: 0px 1px 10px 1px #c300ff;
+          box-shadow: 0px 1px 10px 1px #c300ff;
 }
 
-.Landing .border div {
+.Landing .border .content {
   margin: 5px;
   background-color: #4b4b4be7;
   padding: 40px;
-  border-radius: 0 50px;
+  border-radius: 0 45px;
   position: relative;
 }
 
-.Landing .border div h1 {
-  color: #9f77fd;
+.Landing .border .content h1 {
+  color: #c300ff;
   display: inline;
   font-size: 50px;
+  text-shadow: 0 0 100px #fff, 0 0 42px #c300ff, 0 0 82px #c300ff;
 }
 
-.Landing .border div h1 span {
+.Landing .border .content h1 span {
   color: #c6b9d8;
   font-size: 30px;
 }
 
-.Landing .border div a {
-  position: absolute;
-  bottom: 25px;
-  right: 200px;
-  font-size: 50px;
-  color: #c6b9d8;
-  font-weight: 700;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+.Landing .border .content a {
+  color: #e6e6fb;
   text-decoration: none;
-  background-color: #9f77fd;
-  color: #4b4b4be7;
-  padding-inline: 5px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  margin-left: 80px;
 }
 
-.Landing .border div a:hover {
-  background-color: transparent;
-  color: #9f77fd;
+.Landing .border .content a .arrow {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid #c300ff;
+  margin-right: 10px;
+}
+
+.Landing .border .content a p {
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 40px;
+}
+
+.Landing .border .content a:hover {
+  color: #c300ff;
+}
+
+.Landing .border .content a:hover .arrow {
+  opacity: 1;
+}
+
+.Landing .border .content a:hover p {
+  text-decoration: underline;
 }
 
 @-webkit-keyframes comeIn {

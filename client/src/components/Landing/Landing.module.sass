@@ -1,6 +1,6 @@
-$title: #9f77fd
+$title: #c300ff
 $text: #c6b9d8
-$text-bg: #4b4b4be7
+$bg: #4b4b4be7
     
 .Landing
     width: 100vw
@@ -11,39 +11,52 @@ $text-bg: #4b4b4be7
     justify-content: center
     align-items: center
     .border
-        border: 5px solid $text
+        border: 5px solid $title
         border-radius: 0 50px
         transform: translateY(-200%)
         animation: comeIn 0.8s ease-in-out forwards
         opacity: 0
-        div
+        display: flex
+        box-shadow: 0px 1px 10px 1px $title
+        .content
             margin: 5px
-            background-color: $text-bg
+            background-color: $bg
             padding: 40px
-            border-radius: 0 50px
+            border-radius: 0 45px
             position: relative
             h1
                 color: $title
                 display: inline
                 font-size: 50px
+                text-shadow:  0 0 100px #fff, 0 0 42px $title, 0 0 82px $title
+
                 span
                     color: $text
                     font-size: 30px
             a
-                position: absolute
-                bottom: 25px
-                right: 200px
-                font-size: 50px
-                color: $text
-                font-weight: 700
-                transition: all 0.2s ease-in-out
+                color: #e6e6fb
                 text-decoration: none
-                background-color: $title
-                color: $text-bg
-                padding-inline: 5px 
+                display: inline-flex
+                align-items: center
+                cursor: pointer
+                margin-left: 80px
+                .arrow
+                    opacity: 0
+                    width: 0
+                    height: 0
+                    border-top: 20px solid transparent
+                    border-bottom: 20px solid transparent
+                    border-left: 20px solid #c300ff
+                    margin-right: 10px
+                p
+                    font-family: "Press Start 2P", sans-serif
+                    font-size: 40px
             a:hover
-                background-color: transparent
-                color: $title
+                color: #c300ff
+                .arrow
+                    opacity: 1
+                p
+                    text-decoration: underline
 
 
 @keyframes comeIn

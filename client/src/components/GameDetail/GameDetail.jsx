@@ -1,8 +1,10 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate, useParams } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
 import { getGameID } from "../../redux/actions";
+import styles from "./GameDetail.module.css";
+import defaultImg from "../../assets/default-game.jpg";
 
 function GameDetail() {
   let { id } = useParams();
@@ -19,16 +21,40 @@ function GameDetail() {
   if (typeof game === "string") return <Navigate to="/404" />;
 
   return (
-    <div className="GameDetail">
-      <h1>GameDetail</h1>
-      <div>
-        <img src={game.image} alt="" />
-        <p>name: {game.name}</p>
-        <p>genres: {game.genres}</p>
-        <p>description: {game.description}</p>
-        <p>release: {game.release}</p>
-        <p>rating: {game.rating}</p>
-        <p>Platforms: {game.platforms}</p>
+    <div className={styles.GameDetail}>
+      <div className={styles.border}>
+        <div className={styles.game}>
+          <div className={styles.title}>
+            <h1>Game details</h1>
+          </div>
+          <div className={styles.main}>
+            <img src={game.image || defaultImg} alt="" />
+            <div>
+              <h2>{game.name}</h2>
+              <p>{game.description}</p>
+            </div>
+          </div>
+          <div className={styles.misc}>
+            <div className={styles.data}>
+              <p>
+                Released: <span>{game.released}</span>
+              </p>
+              <p>
+                Rating: <span>{game.rating}</span>
+              </p>
+              <p>
+                Genres: <span>{game.genre.join(", ")}</span>
+              </p>
+              <p>
+                Platforms: <span>{game.platforms}</span>
+              </p>
+            </div>
+            <Link to={"/home"}>
+              <div className={styles.arrow}></div>
+              <p>Back?</p>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );

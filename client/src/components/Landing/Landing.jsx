@@ -6,11 +6,14 @@ function Landing() {
   return (
     <div className={styles.Landing}>
       <div className={styles.border}>
-        <div>
+        <div className={styles.content}>
           <h1>
-            Welcome, Player1 <br /> <span>Find what to play next... </span>
+            Welcome, Player1 <br /> <span>Find what to play next. </span>
           </h1>
-          <Link to="/home">Let's Go!</Link>
+          <Link to={"/home"}>
+            <div className={styles.arrow}></div>
+            <p>Start!</p>
+          </Link>
         </div>
       </div>
     </div>

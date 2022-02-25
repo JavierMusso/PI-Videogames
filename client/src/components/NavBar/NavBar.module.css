@@ -6,6 +6,8 @@
   position: fixed;
   z-index: 2;
   width: 1200px;
+  -webkit-box-shadow: 0px 1px 5px 1px #ff00c8;
+          box-shadow: 0px 1px 5px 1px #ff00c8;
 }
 
 .NavBar .content {

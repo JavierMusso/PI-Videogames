@@ -11,6 +11,9 @@
           box-shadow: inset 0px -15px 10px -15px #00000078;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
+  border: 1px solid #ea00ff;
+  -webkit-box-shadow: 0px 1px 5px 1px #ea00ff;
+          box-shadow: 0px 1px 5px 1px #ea00ff;
 }
 
 .Game .title {

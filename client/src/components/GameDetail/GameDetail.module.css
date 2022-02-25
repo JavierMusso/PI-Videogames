@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+.GameDetail {
+  background-image: url("../../assets/BG-waves.svg");
+  min-height: 100vh;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #eed5ff;
+}
+
+.GameDetail .border {
+  margin: auto;
+  border: 5px solid #c300ff;
+  border-radius: 0 50px;
+  -webkit-box-shadow: 0px 1px 10px 1px #c300ff;
+          box-shadow: 0px 1px 10px 1px #c300ff;
+  -webkit-transform: scale(90%);
+          transform: scale(90%);
+}
+
+.GameDetail .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.GameDetail .game {
+  background-color: #4b4b4b8f;
+  border-radius: 0 45px;
+  margin: 5px;
+  width: 1200px;
+  padding: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 40px;
+}
+
+.GameDetail .game .main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 40px;
+}
+
+.GameDetail .game .main img {
+  width: 50%;
+  border-radius: 15px 15px 40px 40px;
+  -webkit-box-shadow: 0px 1px 10px 1px #c300ff;
+          box-shadow: 0px 1px 10px 1px #c300ff;
+}
+
+.GameDetail .game .misc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 40px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.GameDetail .game .misc .data {
+  width: 50%;
+}
+
+.GameDetail .game .misc .data p {
+  font-family: "Press Start 2P", sans-serif;
+}
+
+.GameDetail .game .misc a {
+  color: #eed5ff;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  width: 50%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.GameDetail .game .misc a .arrow {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid #c300ff;
+  margin-right: 10px;
+}
+
+.GameDetail .game .misc a p {
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 50px;
+}
+
+.GameDetail .game .misc a:hover {
+  color: #c300ff;
+}
+
+.GameDetail .game .misc a:hover .arrow {
+  opacity: 1;
+}
+
+.GameDetail .game .misc a:hover p {
+  text-decoration: underline;
+}
+/*# sourceMappingURL=GameDetail.module.css.map */

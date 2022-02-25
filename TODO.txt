@@ -1,6 +1,10 @@
 ////////// AGREGADOS
 
 
+footer
+
+'made with love'
+
 input de cuantos juegos por pagina
 
 modo oscuro
@@ -24,8 +28,6 @@ precarga hacer un esqueleto en vez de loader ?
 
 
 ////////// COSAS QUE FALTAN HACER
-
-css detail
 
 css create
 
