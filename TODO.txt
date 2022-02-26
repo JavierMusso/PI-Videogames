@@ -2,8 +2,6 @@
 
 footer
 
-'made with love'
-
 About page
 
 subir imagenes
@@ -23,8 +21,6 @@ buscados recientemente
 
 
 ////////// COSAS QUE FALTAN HACER
-
-loaders como la gente
 
 deploy viejita
 

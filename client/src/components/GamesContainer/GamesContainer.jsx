@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { buildPages, showSearch } from "../../redux/actions";
+import { showSearch } from "../../redux/actions";
 import Game from "../Game/Game";
 import PaginationBar from "../PaginationBar/PaginationBar";
 import styles from "./GamesContainer.module.css";
