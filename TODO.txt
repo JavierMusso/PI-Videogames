@@ -22,7 +22,7 @@ buscados recientemente
 
 ////////// COSAS QUE FALTAN HACER
 
-deploy viejita
+subir una img como URL
 
 testing:
     *front
