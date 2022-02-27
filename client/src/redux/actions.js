@@ -36,7 +36,7 @@ export const showSearch = (bool) => {
 export const getGames = (game) => async (dispatch) => {
   if (game) {
     try {
-      let { data } = await axios.get(`http://localhost:3001/api/videogames`, {
+      let { data } = await axios.get(`/api/videogames`, {
         params: { name: game },
       });
       return dispatch({ type: GET_GAMES_BY_NAME, payload: data });
@@ -45,7 +45,7 @@ export const getGames = (game) => async (dispatch) => {
     }
   }
   try {
-    let { data } = await axios.get(`http://localhost:3001/api/videogames`);
+    let { data } = await axios.get(`/api/videogames`);
     return dispatch({ type: GET_GAMES, payload: data });
   } catch (err) {
     console.log(err);
@@ -55,9 +55,7 @@ export const getGames = (game) => async (dispatch) => {
 export const getGameID = (ID) => async (dispatch) => {
   if (!ID) return dispatch({ type: GET_GAME_BY_ID });
   try {
-    let { data } = await axios.get(
-      `http://localhost:3001/api/videogames/${ID}`
-    );
+    let { data } = await axios.get(`/api/videogames/${ID}`);
     return dispatch({ type: GET_GAME_BY_ID, payload: data });
   } catch (err) {
     console.log(err);
@@ -66,10 +64,7 @@ export const getGameID = (ID) => async (dispatch) => {
 
 export const addGame = (newGame) => async (dispatch) => {
   try {
-    let { data } = await axios.post(
-      `http://localhost:3001/api/videogames`,
-      newGame
-    );
+    let { data } = await axios.post(`/api/videogames`, newGame);
     console.log(data);
     return data;
   } catch (err) {
@@ -79,7 +74,7 @@ export const addGame = (newGame) => async (dispatch) => {
 
 export const getGenres = () => async (dispatch) => {
   try {
-    let { data } = await axios.get(`http://localhost:3001/api/genres`);
+    let { data } = await axios.get(`/api/genres`);
     return dispatch({ type: GET_GENRES, payload: data });
   } catch (err) {
     console.log(err);

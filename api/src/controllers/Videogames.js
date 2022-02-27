@@ -1,6 +1,7 @@
 const axios = require("axios");
 const { Op } = require("sequelize");
 const { Videogame, Genre } = require("../db");
+require("dotenv").config();
 const { API_KEY } = process.env;
 
 // cantidad de paginas a llenar (100 / 20 = 5)

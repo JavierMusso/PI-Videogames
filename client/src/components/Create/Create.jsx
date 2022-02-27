@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { addGame } from "../../redux/actions";
+import { addGame, buildPages, getGames } from "../../redux/actions";
 import styles from "./Create.module.css";
 
 function Create() {
@@ -36,9 +36,11 @@ function Create() {
 
     console.log(newGame);
     let created = await dispatch(addGame(newGame));
+    alert(created);
+    await dispatch(getGames());
+    dispatch(buildPages());
 
     // this should be a modal pop up
-    alert(created);
   };
 
   const handlerInputChange = (e) => {
