@@ -8,6 +8,7 @@ import Home from "./components/Home/Home";
 import Landing from "./components/Landing/Landing";
 import NotFound from "./components/NotFound/NotFound";
 import { buildPages, getGames, getGenres, sortBy } from "./redux/actions";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const dispatch = useDispatch();
@@ -30,6 +31,7 @@ function App() {
         <Route path="/game/:id" element={<GameDetail />} />
         <Route path="/create" element={<Create />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,14 @@
+.Footer {
+  letter-spacing: 1px;
+  color: #e8e5ec;
+  text-align: center;
+  padding: 20px;
+  background-color: #161616;
+  -webkit-box-shadow: inset 0px 15px 30px -15px #2c2c2c;
+          box-shadow: inset 0px 15px 30px -15px #2c2c2c;
+}
+
+.Footer a {
+  color: #ea00ff;
+}
+/*# sourceMappingURL=Footer.module.css.map */
