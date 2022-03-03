@@ -1,7 +1,5 @@
 ////////// AGREGADOS
 
-About page
-
 subir imagenes
 
 input de cuantos juegos por pagina
@@ -15,14 +13,7 @@ mostrar un random game on top of all, como si fuera un destacado.
 buscados recientemente
 
 
-
-
-
 ////////// COSAS QUE FALTAN HACER
-
-subir una img como URL
-
-siempre que vuelvo a home, que me ponga los filtros en default
 
 testing:
     *front

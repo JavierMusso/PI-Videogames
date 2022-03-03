@@ -49,7 +49,7 @@ function GameDetail() {
                 Platforms: <span>{game.platforms}</span>
               </p>
             </div>
-            <Link to={"/home"}>
+            <Link className={styles.Back} to={"/home"}>
               <div className={styles.arrow}></div>
               <p>Back?</p>
             </Link>

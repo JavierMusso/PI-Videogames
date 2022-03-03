@@ -8,6 +8,7 @@ import Home from "./components/Home/Home";
 import Landing from "./components/Landing/Landing";
 import NotFound from "./components/NotFound/NotFound";
 import { buildPages, getGames, getGenres, sortBy } from "./redux/actions";
+import About from "./components/About/About";
 
 function App() {
   const dispatch = useDispatch();
@@ -29,6 +30,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/game/:id" element={<GameDetail />} />
         <Route path="/create" element={<Create />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </div>
   );
