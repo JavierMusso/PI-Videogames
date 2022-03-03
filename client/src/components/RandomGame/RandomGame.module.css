@@ -1,0 +1,86 @@
+.RandomGame {
+  width: 920px;
+  padding: 0px 30px;
+}
+
+.RandomGame h2 {
+  color: #e8e5ec;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.RandomGame div {
+  height: 300px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 1px 5px 1px #ea00ff;
+          box-shadow: 0px 1px 5px 1px #ea00ff;
+  overflow: hidden;
+  position: relative;
+}
+
+.RandomGame div img {
+  width: 100%;
+}
+
+.RandomGame div .current {
+  color: #e8e5ec;
+  position: absolute;
+  top: 15px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 0;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  padding: 15px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#3d0f7a9a), color-stop(#3d0f7a9a), to(#00000000));
+  background-image: linear-gradient(to right, #3d0f7a9a, #3d0f7a9a, #00000000);
+}
+
+.RandomGame div .current p {
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 30px;
+}
+
+.RandomGame div .current small {
+  font-size: 20px;
+}
+
+.RandomGame div .pagination {
+  position: absolute;
+  top: 270px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  left: 365px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 20px;
+  width: 140px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.RandomGame div .pagination button {
+  background-color: #3e0f7a;
+  width: 12px;
+  height: 12px;
+  border-radius: 50px;
+  border: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.RandomGame div .pagination .currentPage {
+  background-color: #ea00ff;
+  width: 20px;
+  height: 20px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+/*# sourceMappingURL=RandomGame.module.css.map */

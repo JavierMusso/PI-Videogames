@@ -1,16 +1,3 @@
-////////// AGREGADOS
-
-input de cuantos juegos por pagina
-
-modo oscuro
-
-traer varias imagenes, y mostrarlas con un slide en cada card ?
-
-mostrar un random game on top of all, como si fuera un destacado.
-
-buscados recientemente
-
-
 ////////// COSAS QUE FALTAN HACER
 
 testing:
@@ -21,6 +8,8 @@ testing:
 
 
 
-///////////////
+/////////////// previo a correcciont
+
+armar walkthrough
 
 juntar lista de URL de images para crear game.

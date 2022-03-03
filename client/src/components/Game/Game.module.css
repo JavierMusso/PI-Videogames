@@ -7,8 +7,6 @@
   padding-block: 10px;
   position: relative;
   border-radius: 5px;
-  -webkit-box-shadow: inset 0px -15px 10px -15px #00000078;
-          box-shadow: inset 0px -15px 10px -15px #00000078;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   border: 1px solid #ea00ff;

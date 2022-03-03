@@ -12,6 +12,7 @@
       -ms-flex-align: center;
           align-items: center;
   min-height: 85vh;
+  margin-bottom: 30px;
 }
 
 .GamesContainer .games {

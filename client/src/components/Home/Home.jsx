@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import styles from "./Home.module.css";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
+import RandomGame from "../RandomGame/RandomGame";
 
 function Home() {
   const dispatch = useDispatch();
@@ -21,6 +22,7 @@ function Home() {
         <NavBar />
         <FilterBox />
         <div className={styles.Filter}>
+          <RandomGame />
           <GamesContainer />
         </div>
       </div>

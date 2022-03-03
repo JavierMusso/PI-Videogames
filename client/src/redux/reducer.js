@@ -26,6 +26,7 @@ const initialState = {
   filterByGenreGames: [],
   searchInput: "",
   pageSize: 15,
+  randomGames: [],
 };
 
 const rootReducer = (state = initialState, { type, payload }) => {
@@ -65,11 +66,22 @@ const rootReducer = (state = initialState, { type, payload }) => {
       return { ...state, showSearchResults: payload, searchResults: [] };
 
     case GET_GAMES:
+      let getRandomIndex = () => {
+        return Math.floor(Math.random() * payload.length);
+      };
+
+      let randomGames = [];
+
+      for (let n = 0; n < 5; n++) {
+        randomGames.push(payload[getRandomIndex()]);
+      }
+
       return {
         ...state,
         games: payload,
         filteredGames: payload,
         filterByGenreGames: payload,
+        randomGames: randomGames,
       };
 
     case GET_GAMES_BY_NAME:

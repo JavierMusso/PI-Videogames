@@ -1,0 +1,59 @@
+$text: #e8e5ec
+$color: #ea00ff
+$bg: #3e0f7a
+    
+.RandomGame
+    width: 920px
+    padding: 0px 30px
+    h2
+        color: $text
+        text-align: center
+        margin-bottom: 8px
+    div
+        height: 300px
+        border-radius: 5px
+        box-shadow: 0px 1px 5px 1px $color
+        overflow: hidden
+        position: relative
+        img
+            width: 100%
+        .current
+            color: $text
+            position: absolute
+            top: 15px
+            box-shadow: none
+            border-radius: 0
+            height: min-content
+            padding: 15px
+            background-image: linear-gradient(to right, #3d0f7a9a, #3d0f7a9a, #00000000)
+            p
+                font-size: 40px
+                font-weight: bold
+                line-height: 30px
+            small
+                font-size: 20px
+        .pagination
+            position: absolute
+            top: 270px
+            box-shadow: none
+            left: 365px
+            display: flex
+            height: 20px
+            width: 140px
+            justify-content: space-evenly
+            align-items: center
+            button
+                background-color: $bg
+                width: 12px
+                height: 12px
+                border-radius: 50px
+                border: none
+                transition: all 0.2s ease
+            .currentPage
+                background-color: $color
+                width: 20px
+                height: 20px
+                transition: all 0.2s ease
+
+
+        
