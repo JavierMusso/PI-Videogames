@@ -15,7 +15,7 @@ function Create() {
     rating: "",
     platforms: [],
     genres: [],
-    images: "",
+    image: "",
   });
   const [errors, setErrors] = useState({
     name: false,
@@ -113,7 +113,7 @@ function Create() {
                   pattern="[a-zA-Z0-9]{1-30}"
                 />
                 {errors.name && <small>A title is required!</small>}
-                <label htmlFor="desc">Description:</label>
+                <label htmlFor="description">Description:</label>
                 <textarea
                   name="description"
                   cols="30"
@@ -127,6 +127,14 @@ function Create() {
                 {errors.description && (
                   <small>A description is required!</small>
                 )}
+                <label htmlFor="image">Image URL:</label>
+                <input
+                  type="text"
+                  name="image"
+                  onChange={handlerInputChange}
+                  value={input.image}
+                  placeholder="Any img url..."
+                />
               </div>
               <div className={styles.relesd_genres}>
                 <label htmlFor="released">Release date:</label>

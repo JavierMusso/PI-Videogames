@@ -114,7 +114,7 @@ module.exports = {
       released: released || "No date provided",
       rating: rating || 0,
       platforms,
-      image: image || "",
+      image: image,
     };
 
     const [videogame, created] = await Videogame.findOrCreate({

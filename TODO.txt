@@ -20,3 +20,9 @@ testing:
     *back
     *db
 
+
+
+
+///////////////
+
+juntar lista de URL de images para crear game.
