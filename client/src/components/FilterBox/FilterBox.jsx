@@ -6,6 +6,7 @@ import {
   filterGenre,
   filterSource,
   setGenreInputs,
+  setPageSize,
   sortBy,
 } from "../../redux/actions";
 import styles from "./FilterBox.module.css";
@@ -39,6 +40,11 @@ function FilterBox() {
       })
     );
     dispatch(filterGenre());
+    dispatch(buildPages());
+  };
+
+  const handlerPageSize = (size) => {
+    dispatch(setPageSize(size));
     dispatch(buildPages());
   };
 
@@ -130,6 +136,19 @@ function FilterBox() {
               );
             })}
         </div>
+      </div>
+      <div className={styles.pageSize}>
+        <label htmlFor="pageSize">Games per page</label>
+        <select
+          name="pageSize"
+          onChange={(e) => handlerPageSize(e.target.value)}
+          defaultValue="15"
+        >
+          <option value="6">6</option>
+          <option value="15">15</option>
+          <option value="21">21</option>
+          <option value="27">27</option>
+        </select>
       </div>
     </div>
   );

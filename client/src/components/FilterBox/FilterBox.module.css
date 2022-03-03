@@ -44,7 +44,7 @@
           box-shadow: 0px 1px 10px 1px #ea00ff;
 }
 
-.FilterBox .source, .FilterBox .sort, .FilterBox .genres {
+.FilterBox .source, .FilterBox .sort, .FilterBox .genres, .FilterBox .pageSize {
   border-top: 2px solid #244ab4;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -60,7 +60,7 @@
   padding-block: 15px;
 }
 
-.FilterBox .source div, .FilterBox .sort div, .FilterBox .genres div {
+.FilterBox .source div, .FilterBox .sort div, .FilterBox .genres div, .FilterBox .pageSize div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -70,6 +70,16 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.FilterBox .source select, .FilterBox .sort select, .FilterBox .genres select, .FilterBox .pageSize select {
+  color: #e8e5ec;
+  font-weight: bold;
+  background-color: #733db9;
+  border: 1px solid #ea00ff;
+  border-radius: 10px 10px 0 10px;
+  padding: 5px;
+  outline: none;
 }
 
 .FilterBox .sort {

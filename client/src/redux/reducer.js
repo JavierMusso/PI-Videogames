@@ -8,6 +8,7 @@ import {
   GET_GENRES,
   SET_CURRENT,
   SET_GENRE_INPUTS,
+  SET_PAGE_SIZE,
   SET_SEARCH_INPUT,
   SHOW_SEARCH,
   SORT_BY,
@@ -24,25 +25,27 @@ const initialState = {
   genreInputs: {},
   filterByGenreGames: [],
   searchInput: "",
+  pageSize: 15,
 };
-
-let gamesPerPage = 15;
 
 const rootReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case BUILD_PAGES:
-      let nPages = Math.ceil(state.filterByGenreGames.length / gamesPerPage);
+      let nPages = Math.ceil(state.filterByGenreGames.length / state.pageSize);
       let newPages = [];
       for (let i = 0; i < nPages; i++) {
         newPages.push([
           ...state.filterByGenreGames.slice(
-            i * gamesPerPage,
-            (i + 1) * gamesPerPage
+            i * state.pageSize,
+            (i + 1) * state.pageSize
           ),
         ]);
       }
       if (!newPages.length) newPages = `Can't find any game :(`;
       return { ...state, pages: newPages };
+
+    case SET_PAGE_SIZE:
+      return { ...state, pageSize: payload };
 
     case SET_CURRENT:
       return {

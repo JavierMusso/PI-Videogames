@@ -1,7 +1,5 @@
 ////////// AGREGADOS
 
-subir imagenes
-
 input de cuantos juegos por pagina
 
 modo oscuro

@@ -13,6 +13,7 @@ export const SORT_BY = "SORT_BY";
 export const FILTER_GENRE = "FILTER_GENRE";
 export const SET_GENRE_INPUTS = "SET_GENRE_INPUTS";
 export const SET_SEARCH_INPUT = "SET_SEARCH_INPUT";
+export const SET_PAGE_SIZE = "SET_PAGE_SIZE";
 
 // armo las paginas, lo llamo cada vez que cambio la cantidad de juegos
 export const buildPages = () => {
@@ -95,4 +96,8 @@ export const setGenreInputs = (genreInputs) => {
 
 export const filterGenre = () => {
   return { type: FILTER_GENRE };
+};
+
+export const setPageSize = (size) => {
+  return { type: SET_PAGE_SIZE, payload: size };
 };
