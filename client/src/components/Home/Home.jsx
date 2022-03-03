@@ -6,6 +6,7 @@ import { getGameID } from "../../redux/actions";
 import { useEffect } from "react";
 import styles from "./Home.module.css";
 import NavBar from "../NavBar/NavBar";
+import Footer from "../Footer/Footer";
 
 function Home() {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ function Home() {
           <GamesContainer />
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
