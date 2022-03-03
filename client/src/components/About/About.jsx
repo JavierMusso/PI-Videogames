@@ -17,17 +17,16 @@ function About() {
                 <a href="https://www.linkedin.com/in/javier-musso">
                   Javier Musso
                 </a>
-                , and this is an app done done to put together what I have
-                learned at <a href="https://www.soyhenry.com/">Henry</a>'s
-                bootcamp.
+                , and this app was created to put together what I have learned
+                at <a href="https://www.soyhenry.com/">Henry</a>'s bootcamp.
               </h3>
               <p>
                 In the making of this project, I've used modern and popular
                 stacks, such as React, Express, Sequelize. <br />
                 Also, put in practice good design patterns, as the entire app
                 follows modular design. <br /> <br />
-                Css styles where done in vanilla css, with no frameworks. Using
-                Sass as a preprossesor and CSS modules to apply styles to React
+                Css styles were done in vanilla css, with no frameworks. Using
+                Sass as a preprocessor and CSS modules to apply styles to React
                 functional components.
               </p>
               <Link className={styles.Back} to={"/home"}>

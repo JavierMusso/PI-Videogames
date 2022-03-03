@@ -29,9 +29,18 @@ module.exports = {
         },
       });
 
-      if (gamesDB.length === 15) return { success: gamesDB };
+      gamesDB.map((game) => {
+        let genres = game.genres.map((genre) => genre.name);
+        videogames.push({
+          id: game.id,
+          name: game.name,
+          rating: Number(game.rating),
+          image: game.image,
+          genres: genres,
+        });
+      });
 
-      videogames.push(...gamesDB);
+      if (gamesDB.length === 15) return { success: videogames };
 
       let { data } = await axios.get(`https://api.rawg.io/api/games`, {
         params: { search: name, key: API_KEY },

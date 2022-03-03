@@ -7,6 +7,7 @@ import {
   filterSource,
   setGenreInputs,
   setPageSize,
+  showSearch,
   sortBy,
 } from "../../redux/actions";
 import styles from "./FilterBox.module.css";
@@ -34,6 +35,7 @@ function FilterBox() {
   };
 
   const handlerGenres = (genre) => {
+    dispatch(showSearch(false));
     dispatch(
       setGenreInputs({
         [genre]: !genreInputs[genre],
