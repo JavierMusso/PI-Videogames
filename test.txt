@@ -1,5 +1,0 @@
-https://api.rawg.io/api/games?key=9c67a0a1b18b4b8ab321427a016d7c33
-
-https://api.rawg.io/api/games?search=strike&key=9c67a0a1b18b4b8ab321427a016d7c33
-
-https://api.rawg.io/api/games/123?key=9c67a0a1b18b4b8ab321427a016d7c33
