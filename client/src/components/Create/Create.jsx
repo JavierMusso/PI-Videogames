@@ -24,7 +24,7 @@ function Create() {
   });
 
   const handlerSubmit = async (e) => {
-    e.preventDefault();
+    //e.preventDefault();
 
     let newGame = input;
 
