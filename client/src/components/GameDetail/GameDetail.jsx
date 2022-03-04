@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { getGameID } from "../../redux/actions";
 import styles from "./GameDetail.module.css";
-import defaultImg from "../../assets/default-game.jpg";
 
 function GameDetail() {
   let { id } = useParams();
@@ -28,7 +27,7 @@ function GameDetail() {
             <h1>Game details</h1>
           </div>
           <div className={styles.main}>
-            <img src={game.image || defaultImg} alt="" />
+            <img src={game.image} alt="" />
             <div>
               <h2>{game.name}</h2>
               <p>{game.description}</p>

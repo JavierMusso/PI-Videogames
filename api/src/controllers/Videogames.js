@@ -3,6 +3,8 @@ const { Op } = require("sequelize");
 const { Videogame, Genre } = require("../db");
 require("dotenv").config();
 const { API_KEY } = process.env;
+const defaultImg =
+  "https://pi-videogames-jm.herokuapp.com/api/default-game.jpg";
 
 // cantidad de paginas a llenar (100 / 20 = 5)
 const qtyOfGames = 5;
@@ -123,7 +125,7 @@ module.exports = {
       released: released || "No date provided",
       rating: rating || 0,
       platforms,
-      image: image,
+      image: image || defaultImg,
     };
 
     const [videogame, created] = await Videogame.findOrCreate({
