@@ -6,8 +6,14 @@ function Footer() {
     <div className={styles.Footer}>
       <p>
         App made by{" "}
-        <a href="https://www.linkedin.com/in/javier-musso">Javier Musso</a> at{" "}
-        <a href="https://www.soyhenry.com/">Henry</a>, 2022.
+        <a href="https://www.linkedin.com/in/javier-musso" target="_blank">
+          Javier Musso
+        </a>{" "}
+        at{" "}
+        <a href="https://www.soyhenry.com/" target="_blank">
+          Henry
+        </a>
+        , 2022.
       </p>
     </div>
   );

@@ -14,11 +14,18 @@ function About() {
             <div>
               <h3>
                 Hi! I'm{" "}
-                <a href="https://www.linkedin.com/in/javier-musso">
+                <a
+                  href="https://www.linkedin.com/in/javier-musso"
+                  target="_blank"
+                >
                   Javier Musso
                 </a>
                 , and this app was created to put together what I have learned
-                at <a href="https://www.soyhenry.com/">Henry</a>'s bootcamp.
+                at{" "}
+                <a href="https://www.soyhenry.com/" target="_blank">
+                  Henry
+                </a>
+                's bootcamp.
               </h3>
               <p>
                 In the making of this project, I've used modern and popular
