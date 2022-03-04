@@ -1,9 +1,3 @@
-
-transicion de imagenes randomgames
-
-
-
-
 ////////// COSAS QUE FALTAN HACER
 
 testing:
