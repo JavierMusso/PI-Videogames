@@ -2,8 +2,6 @@
 
 testing:
     *front
-    *back
-    *db
 
 
 
