@@ -17,12 +17,17 @@ function About() {
                 <a
                   href="https://www.linkedin.com/in/javier-musso"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   Javier Musso
                 </a>
                 , and this app was created to put together what I have learned
                 at{" "}
-                <a href="https://www.soyhenry.com/" target="_blank">
+                <a
+                  href="https://www.soyhenry.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Henry
                 </a>
                 's bootcamp.
